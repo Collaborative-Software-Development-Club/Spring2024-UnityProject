@@ -8,8 +8,7 @@
 4. Click the download link once it finishes.
 5. Install the program as instructed by the installation screen.
 6. Open GitHub Desktop.
-7. Login to the application using your GitHub login information.
-	a. If you do not have a GitHub login, head to https://github.com/ and create an
+7. Login to the application using your GitHub login information. If you do not have a GitHub login, head to https://github.com/ and create an
 account. I will invite you to the organization once you notify me that your account has
 been created.
 
@@ -25,14 +24,13 @@ assistance, contact the VP (beanshapiro on discord).
 5. Select the blue icon that says "Get started" under the "Personal" header.
 6. Download the Unity Hub application for your device.
 7. Click the download link once it finishes.
-8. Go through the Installer prompt checks. Choose the default components only.
-	a. This may or may not occur, but if you are prompted for a version of Unity Editor, 
+8. Go through the Installer prompt checks. Choose the default components only. This may or may not occur, but if you are prompted for a version of Unity Editor, 
 choose version 2022.3.8f1.
 9. Open the newly installed Unity Hub.
-10. You will likely be prompted to create a Unity account. Do so, creating a Unity ID. Choose
+10. You will likely be prompted to create a Unity account. Do so, by creating a Unity ID. Choose
 "Personal" when you get to licensing.
 11. Login to Unity Hub.
-12. You will be prompted to install Unity Editor. Again, choose version 2022.3.7f1. Agree to
+12. You will be prompted to install Unity Editor. Again, choose version 2022.3.8f1. Agree to
 the license agreement.
 
 Congratulations! You should have Unity installed on your device! If you need
