@@ -36,4 +36,19 @@ the license agreement.
 Congratulations! You should have Unity installed on your device! If you need
 assistance, contact the VP (beanshapiro on discord).
 
+-- ACCESSING THE PROJECT ON YOUR DEVICE -- 
+1. Go to GitHub Desktop on your device.
+2. Click File in the top left corner.
+3. From there, click "Clone repository"
+4. Locate the repository for this project from the list. It should be called "Spring2024-UnityProject".
+5. Hit "Clone". Wait for the project to finish cloning.
+6. Now head to the Unity Hub application on your device.
+7. From the "Projects" tab, locate "Open" and click it.
+8. Locate the GitHub folder on your device. For a Windows device, this is usually under User/[YOUR-USERNAME]/Documents. Click it to enter the folder, but DO NOT CLICK OPEN.
+9. You should see several items in this folder. One of them should be called "CSDCGameSpring". Open this folder by hitting the button in the bottom right.
+10. Unity should now allow you to open the project
+
+Congratulations! You can now access the project on your device! If you need
+assistance, contact the VP (beanshapiro on discord).
+
 ###################################################################################################
