@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1178775397329909676
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2346763902626776133}
+  m_Layer: 0
+  m_Name: ProjectileSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2346763902626776133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178775397329909676}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.22, y: 8.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3405106670183698363}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2658025574861936347
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,9 +57,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2658025574861936347}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.000000021855696, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.356415, y: 8.2, z: -24.112074}
-  m_LocalScale: {x: 4501.068, y: 4501.068, z: 4501.068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4050.961, y: 4050.9612, z: 4050.9612}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3405106670183698363}
@@ -93,6 +124,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3405106670183698363}
   - component: {fileID: 3741011122555377569}
+  - component: {fileID: 6713647404501681115}
+  - component: {fileID: 8853108423779600095}
   m_Layer: 0
   m_Name: IceTower 1
   m_TagString: Untagged
@@ -114,6 +147,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3434245962518547553}
+  - {fileID: 2346763902626776133}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &3741011122555377569
@@ -129,9 +163,45 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildableGridObjectTypeSO: {fileID: 11400000, guid: 5c91fd4bca97d76458ffa326fc5776da, type: 2}
-  rotateObjectForXY: 0
-  rotateObjectForXZ: 1
+  rotateObjectForXY: 1
+  rotateObjectForXZ: 0
   rotateForXY: 0
-  objectScale: {x: 17.133057, y: 19.786282, z: 19.447624}
-  objectCenter: {x: -10.111317, y: 9.383089, z: 24.019382}
-  objectCustomPivot: {x: -10.111317, y: -0.5100517, z: 24.019382}
+  objectScale: {x: 15.419752, y: 17.807652, z: 17.502861}
+  objectCenter: {x: -0.679415, y: 1.0647802, z: -0.08343315}
+  objectCustomPivot: {x: -0.679415, y: -7.8390455, z: -0.08343315}
+--- !u!114 &6713647404501681115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6587168362632295300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09887d2df39d37c4e92f81f3541fe8a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerRadius: {fileID: 8853108423779600095}
+  projectile: {fileID: 3455633093272295177, guid: b55fcdff8e0d21b4fb54898133d7811a, type: 3}
+  projectileSpawn: {fileID: 2346763902626776133}
+--- !u!135 &8853108423779600095
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6587168362632295300}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 30
+  m_Center: {x: 0, y: 0, z: 0}
