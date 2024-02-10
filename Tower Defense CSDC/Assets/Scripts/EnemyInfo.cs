@@ -5,8 +5,10 @@ using UnityEngine;
 
 public class EnemyInfo : MonoBehaviour
 {
-    [SerializeField] public virtual int health { get; set; } = 100;
-    [SerializeField] public virtual int speed { get; set; } = 10;
-    [SerializeField] public virtual int cost { get; set; } = 1;
+    public EnemyTypes.EnemyType type;
+    public int health;
+    public int speed;
+    public int cost;
+    public GameObject model;
 
 }
