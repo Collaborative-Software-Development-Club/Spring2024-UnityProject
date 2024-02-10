@@ -13,11 +13,10 @@ public class TowerShootingScript : MonoBehaviour
         objPool = new List<GameObject>();
     }
     void Update() {
-        foreach (GameObject obj in objPool) {
+        foreach (GameObject obj in objPool.ToArray()) {
             if (obj.GetComponent<HomingProjectile>().markForDestroy) {
-                GameObject temp = obj;
-                Destroy(temp);
                 objPool.Remove(obj);
+                Destroy(obj);
             }
         }
     }
@@ -25,6 +24,7 @@ public class TowerShootingScript : MonoBehaviour
         if (col.gameObject.tag.Equals("Enemy")) {
             GameObject temp = Instantiate(projectile, projectileSpawn.position, Quaternion.identity);
             temp.GetComponent<HomingProjectile>().SetProjectileTarget(col.gameObject);
+            objPool.Add(temp);
         }
     }
 }

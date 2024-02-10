@@ -5,7 +5,7 @@ using UnityEngine;
 public class HomingProjectile : MonoBehaviour
 {
     [SerializeField] private float speed = 5;
-    [SerializeField] private float percentOfJourneyToComplete = 0.99f;
+    [SerializeField] private float percentOfJourneyToComplete = 0.95f;
     [HideInInspector] public bool markForDestroy = false;
     private GameObject target;
     private float startTime;
@@ -16,7 +16,6 @@ public class HomingProjectile : MonoBehaviour
     void FixedUpdate()
     {
         if (target != null) {
-            journeyLength = Vector3.Distance(this.gameObject.transform.position, target.transform.position);
             float distanceCovered = (Time.time - startTime) * speed;
             float fractionOfJourney = distanceCovered / journeyLength;
             transform.position = Vector3.Lerp(this.gameObject.transform.position, target.transform.position, fractionOfJourney);
@@ -29,6 +28,7 @@ public class HomingProjectile : MonoBehaviour
     }
     private void initiateTargeting() {
         startTime = Time.time;
+        journeyLength = Vector3.Distance(this.gameObject.transform.position, target.transform.position);
     }
 
 }
