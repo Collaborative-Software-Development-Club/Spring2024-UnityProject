@@ -47,6 +47,18 @@ public class EnemyManager : MonoBehaviour
 
     }
 
+    public EnemyInfo GetEnemyInfo(EnemyTypes.EnemyType enemyType)
+    {
+        EnemyInfo enemyInfo;
+        bool found = enemyDictionary.TryGetValue(enemyType, out enemyInfo);
+        if (!found)
+        {
+            Debug.LogError("Enemy type of {enemyType} haven't set up");
+        }
+        return enemyInfo;
+    }
+
+
 
 
 

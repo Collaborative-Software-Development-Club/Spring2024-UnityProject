@@ -7,6 +7,9 @@ public class WaveManager : MonoBehaviour
 {
     [SerializeField] private int waveFrequence;
     [SerializeField] private int waveCount;
+    public Transform spawningPoint;
+    public GameObject enemyPrefab;
+
     //public GameObject enemyPrefab;
     public List<int> wavesCurrency;
     public List<EnemyTypes.EnemyType> spawningEnemyList;
@@ -16,6 +19,7 @@ public class WaveManager : MonoBehaviour
     {
         spawningEnemyList = new List<EnemyTypes.EnemyType>();
         SetUpEnemyListByCurrency(0);
+        StartSpawningEnemies();
 
 
     }
@@ -31,9 +35,21 @@ public class WaveManager : MonoBehaviour
 
     }
 
-    public void SpawnEnemy()
+    public void StartSpawningEnemies()
     {
+        StartCoroutine(SpawnEnemyByList());
+    }
 
+    IEnumerator SpawnEnemyByList()
+    {
+        foreach(EnemyTypes.EnemyType enemyType in spawningEnemyList)
+        {
+            GameObject enemy = Instantiate(enemyPrefab, spawningPoint);
+            EnemyController enemyController = enemy.GetComponent<EnemyController>();
+            EnemyInfo newEnemyInfo = EnemyManager.Instance.GetEnemyInfo(enemyType);
+            enemyController.SetEnemyInfo(newEnemyInfo);
+            yield return new WaitForSeconds(1f); // time space for spawning
+        }
     }
 
     public void SetUpEnemyListByCurrency(int waveCount)

@@ -28,6 +28,11 @@ public class EnemyController : MonoBehaviour
         enemyInfo.health -= losedHealth;
     }
 
+    public void SetEnemyInfo(EnemyInfo newEnemyInfo)
+    {
+        enemyInfo = newEnemyInfo;
+    }
+
 
 
 }
