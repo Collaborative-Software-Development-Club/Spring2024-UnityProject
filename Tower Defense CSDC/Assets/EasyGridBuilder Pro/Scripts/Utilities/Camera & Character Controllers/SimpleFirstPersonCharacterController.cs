@@ -77,7 +77,7 @@ namespace SoulGames.Utilities
             verticalHandleInput = Input.GetAxisRaw("Vertical");
 
             //Handles jumping input
-            if(Input.GetKey(KeyCode.Space) && readyToJump && grounded)
+            if (Input.GetKey(KeyCode.Space) && readyToJump && grounded)
             {
                 readyToJump = false;
                 Jump();
@@ -85,17 +85,27 @@ namespace SoulGames.Utilities
             }
 
             //Handles sprinting input
-            if(Input.GetKey(KeyCode.LeftShift)){
-                moveSpeed=sprintSpeed;
-            }else{
-                moveSpeed=walkSpeed;
+            if (Input.GetKey(KeyCode.LeftShift)) {
+                moveSpeed = sprintSpeed;
+            } else {
+                moveSpeed = walkSpeed;
             }
 
             //Handles Crouching Behaviour
-            if(Input.GetKeyDown(KeyCode.LeftControl) && !crouching){
+            if (Input.GetKeyDown(KeyCode.LeftControl) && !crouching && grounded) {
                 crouching = !crouching;
                 Couch();
-            }else if()
+            } else if (Input.GetKeyDown(KeyCode.LeftControl) && crouching && grounded)
+            {
+                crouching = !crouching;
+                Stand();
+            }
+
+            //Handles quitting the game
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Exit();
+            }
 
         }
 
@@ -137,11 +147,16 @@ namespace SoulGames.Utilities
         }
 
         private void Couch(){
-            rb.transform.localScale = (rb.localScale,rb.localScale*crouchFactor,rb.localScale);
+            rb.transform.localScale = new Vector3(rb.transform.localScale.x,rb.transform.localScale.y - crouchFactor,rb.transform.localScale.z);  
         }
 
         private void Stand(){
-            rb.transform.localScale = (rb.localScale,rb.localScale/crouchFactor,rb.localScale);
+            rb.transform.localScale = new Vector3(rb.transform.localScale.x, rb.transform.localScale.y / crouchFactor, rb.transform.localScale.z);
+        }
+
+        private void Exit()
+        {
+            Application.Quit();
         }
     }
 }
