@@ -6,8 +6,10 @@ namespace SoulGames.Utilities
     {
         [Header("Movement")]
         [Space]
-        [Tooltip("Character movement speed")]
-        [SerializeField]private float moveSpeed;
+        [Tooltip("Character's walking speed")]
+        [SerializeField]private float walkSpeed;
+        [Tooltip("Character's sprinting speed")]
+        [SerializeField]private float sprintSpeed;
         [Tooltip("RigidBody ground drag")]
         [SerializeField]private float groundDrag;
         [Tooltip("Character jump power")]
@@ -17,19 +19,22 @@ namespace SoulGames.Utilities
         [Tooltip("In air movement multiplier")]
         [SerializeField]private float airMultiplier;
         
+        
         [Header("Ground Check")]
         [Space]
         [Tooltip("Player collider height")]
         [SerializeField]private float playerHeight;
+        [Tooltip("Factor by which rigidbody shrinks when crouching")]
+        [SerializeField]private float crouchFactor;
         [Tooltip("Layer Mask to check ground. Used for Jump & Fall")]
         [SerializeField]private LayerMask groundLayerMask;
         [Tooltip("Player Position transform empty game object")]
         [SerializeField]private Transform orientation;
 
         private bool readyToJump;
+        private float moveSpeed;
         private bool grounded;
-        private float walkSpeed;
-        private float sprintSpeed;
+        private bool crouching;
         private float horizontalHandleInput;
         private float verticalHandleInput;
         private Vector3 moveDirection;
@@ -40,6 +45,7 @@ namespace SoulGames.Utilities
             rb = GetComponent<Rigidbody>();
             rb.freezeRotation = true;
             readyToJump = true;
+            crouching = false;
         }
 
         private void Update()
@@ -66,15 +72,31 @@ namespace SoulGames.Utilities
 
         private void HandleInput()
         {
+            //Handles WASD Movement
             horizontalHandleInput = Input.GetAxisRaw("Horizontal");
             verticalHandleInput = Input.GetAxisRaw("Vertical");
 
+            //Handles jumping input
             if(Input.GetKey(KeyCode.Space) && readyToJump && grounded)
             {
                 readyToJump = false;
                 Jump();
                 Invoke(nameof(ResetJump), jumpCooldown);
             }
+
+            //Handles sprinting input
+            if(Input.GetKey(KeyCode.LeftShift)){
+                moveSpeed=sprintSpeed;
+            }else{
+                moveSpeed=walkSpeed;
+            }
+
+            //Handles Crouching Behaviour
+            if(Input.GetKeyDown(KeyCode.LeftControl) && !crouching){
+                crouching = !crouching;
+                Couch();
+            }else if()
+
         }
 
         private void MovePlayer()
@@ -89,6 +111,7 @@ namespace SoulGames.Utilities
             {
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
             }
+
         }
 
         private void HandleSpeed()
@@ -111,6 +134,14 @@ namespace SoulGames.Utilities
         private void ResetJump()
         {
             readyToJump = true;
+        }
+
+        private void Couch(){
+            rb.transform.localScale = (rb.localScale,rb.localScale*crouchFactor,rb.localScale);
+        }
+
+        private void Stand(){
+            rb.transform.localScale = (rb.localScale,rb.localScale/crouchFactor,rb.localScale);
         }
     }
 }
