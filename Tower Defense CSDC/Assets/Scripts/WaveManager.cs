@@ -76,11 +76,13 @@ public class WaveManager : MonoBehaviour
         
 
 
-        List<EnemyTypes.EnemyType> sortedEnemy = EnemyManager.Instance.sortedEnemyListByCostDecrease;
+        List<EnemyTypes.EnemyType> sortedEnemy = EnemyManager.Instance.GetEnemyListSortedByCostDecrease();
+        
         foreach (EnemyTypes.EnemyType enemyType in sortedEnemy)
         {
             
             if (waveCurrency == 0) break;
+            
             EnemyInfo enemyInfo;
             EnemyManager.Instance.enemyDictionary.TryGetValue(enemyType, out enemyInfo);
             int enemyCost = enemyInfo.cost;
@@ -90,7 +92,9 @@ public class WaveManager : MonoBehaviour
                 enemyNum = waveCurrency;
             }
             else {
+                Debug.Log(enemyType);
                 enemyNum = UnityEngine.Random.Range(0, waveCurrency / enemyCost);
+                Debug.Log(enemyNum);
             }
             waveCurrency -= enemyNum * enemyCost;
             while (enemyNum != 0)
