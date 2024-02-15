@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 {
     public EnemyInfo enemyInfo;
+    
 
     private void Start()
     {

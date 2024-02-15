@@ -14,6 +14,7 @@ public class WaveManager : MonoBehaviour
     public List<int> wavesCurrency;
     public List<EnemyTypes.EnemyType> spawningEnemyList;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,11 @@ public class WaveManager : MonoBehaviour
 
     }
 
+    public void SetSortedAllowedEnemyListByWave()
+    {
+
+    }
+
     public void StartSpawningEnemies()
     {
         StartCoroutine(SpawnEnemyByList());
@@ -42,14 +48,20 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator SpawnEnemyByList()
     {
-        foreach(EnemyTypes.EnemyType enemyType in spawningEnemyList)
+        while (spawningEnemyList.Count!= 0)
         {
+            System.Random random = new System.Random();
+            int nextRandom = random.Next(spawningEnemyList.Count);
+            EnemyTypes.EnemyType enemyType = spawningEnemyList[nextRandom];
+            spawningEnemyList.RemoveAt(nextRandom); // get random enemy and remove it from spawning list
+
             GameObject enemy = Instantiate(enemyPrefab, spawningPoint);
             EnemyController enemyController = enemy.GetComponent<EnemyController>();
             EnemyInfo newEnemyInfo = EnemyManager.Instance.GetEnemyInfo(enemyType);
             enemyController.SetEnemyInfo(newEnemyInfo);
             yield return new WaitForSeconds(1f); // time space for spawning
         }
+
     }
 
     public void SetUpEnemyListByCurrency(int waveCount)
@@ -64,7 +76,7 @@ public class WaveManager : MonoBehaviour
         
 
 
-        List<EnemyTypes.EnemyType> sortedEnemy = EnemyManager.Instance.sortedEnemyListByCost;
+        List<EnemyTypes.EnemyType> sortedEnemy = EnemyManager.Instance.sortedEnemyListByCostDecrease;
         foreach (EnemyTypes.EnemyType enemyType in sortedEnemy)
         {
             
