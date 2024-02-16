@@ -9,8 +9,6 @@ public class WaveManager : MonoBehaviour
     [SerializeField] private int waveCount;
     public Transform spawningPoint;
     public GameObject enemyPrefab;
-
-    //public GameObject enemyPrefab;
     public List<int> wavesCurrency;
     public List<EnemyTypes.EnemyType> spawningEnemyList;
 
@@ -19,10 +17,21 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         spawningEnemyList = new List<EnemyTypes.EnemyType>();
-        SetUpEnemyListByCurrency(0);
-        StartSpawningEnemies();
+        StartCoroutine(WaveTimer());
 
 
+    }
+
+    IEnumerator WaveTimer()
+    {
+        while (waveCount < wavesCurrency.Count)
+        {
+            
+            yield return new WaitForSeconds(waveFrequence);
+            SetUpEnemyListByCurrency(waveCount);
+            StartSpawningEnemies();
+            waveCount++;
+        }
     }
 
     // Update is called once per frame
@@ -32,11 +41,6 @@ public class WaveManager : MonoBehaviour
     }
 
     public void StartNextWave()
-    {
-
-    }
-
-    public void SetSortedAllowedEnemyListByWave()
     {
 
     }
@@ -55,10 +59,16 @@ public class WaveManager : MonoBehaviour
             EnemyTypes.EnemyType enemyType = spawningEnemyList[nextRandom];
             spawningEnemyList.RemoveAt(nextRandom); // get random enemy and remove it from spawning list
 
-            GameObject enemy = Instantiate(enemyPrefab, spawningPoint);
+            GameObject enemy = Instantiate(enemyPrefab, spawningPoint); // spawn enemy object
+
+            
+            enemy.name = enemyType.ToString(); // set enemy object name
             EnemyController enemyController = enemy.GetComponent<EnemyController>();
             EnemyInfo newEnemyInfo = EnemyManager.Instance.GetEnemyInfo(enemyType);
             enemyController.SetEnemyInfo(newEnemyInfo);
+            GameObject enemyModel = Instantiate(newEnemyInfo.model, enemy.transform);
+
+            //Debug.Log(enemyType);
             yield return new WaitForSeconds(1f); // time space for spawning
         }
 
@@ -92,14 +102,15 @@ public class WaveManager : MonoBehaviour
                 enemyNum = waveCurrency;
             }
             else {
-                Debug.Log(enemyType);
                 enemyNum = UnityEngine.Random.Range(0, waveCurrency / enemyCost);
                 Debug.Log(enemyNum);
+                
             }
             waveCurrency -= enemyNum * enemyCost;
             while (enemyNum != 0)
             {
                 spawningEnemyList.Add(enemyType);
+                //Debug.Log("Added: " + enemyType);
                 enemyNum--;
             }
            
@@ -110,3 +121,6 @@ public class WaveManager : MonoBehaviour
 
 
 }
+
+
+// To do next time: add enemy model

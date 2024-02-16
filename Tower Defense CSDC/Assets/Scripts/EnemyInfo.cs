@@ -9,6 +9,8 @@ public class EnemyInfo : MonoBehaviour
     public int health;
     public int speed;
     public int cost;
+    public int damage;
     public GameObject model;
+
 
 }
