@@ -10,8 +10,6 @@ namespace SoulGames.Utilities
         [SerializeField]private float walkSpeed;
         [Tooltip("Character's sprinting speed")]
         [SerializeField]private float sprintSpeed;
-        [Tooltip("RigidBody ground drag")]
-        [SerializeField]private float groundDrag;
         [Tooltip("Character jump power")]
         [SerializeField]private float jumpForce;
         [Tooltip("Initial jump delay")]
@@ -55,14 +53,6 @@ namespace SoulGames.Utilities
             HandleInput();
             HandleSpeed();
 
-            if (grounded)
-            {
-                rb.drag = groundDrag;
-            }
-            else
-            {
-                rb.drag = 0;
-            }
         }
 
         private void FixedUpdate()
@@ -87,18 +77,9 @@ namespace SoulGames.Utilities
             //Handles sprinting input
             if (Input.GetKey(KeyCode.LeftShift)) {
                 moveSpeed = sprintSpeed;
-            } else {
+            } 
+            else {
                 moveSpeed = walkSpeed;
-            }
-
-            //Handles Crouching Behaviour
-            if (Input.GetKeyDown(KeyCode.LeftControl) && !crouching && grounded) {
-                crouching = !crouching;
-                Couch();
-            } else if (Input.GetKeyDown(KeyCode.LeftControl) && crouching && grounded)
-            {
-                crouching = !crouching;
-                Stand();
             }
 
             //Handles quitting the game
@@ -113,7 +94,14 @@ namespace SoulGames.Utilities
         {
             moveDirection = orientation.forward * verticalHandleInput + orientation.right * horizontalHandleInput;
 
-            if(grounded)
+            //Stop player immediately when no input is given
+            if (grounded && moveDirection.magnitude < 1)
+            {
+                rb.velocity = new Vector3(0,rb.velocity.y,0);
+            }
+
+            //Move Player
+            if (grounded)
             {
                 rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
             }
@@ -144,14 +132,6 @@ namespace SoulGames.Utilities
         private void ResetJump()
         {
             readyToJump = true;
-        }
-
-        private void Couch(){
-            rb.transform.localScale = new Vector3(rb.transform.localScale.x,rb.transform.localScale.y - crouchFactor,rb.transform.localScale.z);  
-        }
-
-        private void Stand(){
-            rb.transform.localScale = new Vector3(rb.transform.localScale.x, rb.transform.localScale.y / crouchFactor, rb.transform.localScale.z);
         }
 
         private void Exit()
