@@ -32,7 +32,19 @@ public class EnemyController : MonoBehaviour
 
     public void SetEnemyInfo(EnemyInfo newEnemyInfo)
     {
-        enemyInfo = newEnemyInfo;
+        if (enemyInfo == null)
+        {
+            enemyInfo = gameObject.AddComponent<EnemyInfo>();
+        }
+
+        enemyInfo.type = newEnemyInfo.type;
+        enemyInfo.health = newEnemyInfo.health;
+        enemyInfo.speed = newEnemyInfo.speed;
+        enemyInfo.cost = newEnemyInfo.cost;
+        enemyInfo.damage = newEnemyInfo.damage;
+        enemyInfo.model = newEnemyInfo.model;
+
+
     }
 
 
