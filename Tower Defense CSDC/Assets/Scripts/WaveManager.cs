@@ -5,7 +5,7 @@ using System;
 
 public class WaveManager : MonoBehaviour
 {
-    [SerializeField] private int waveFrequence;
+    public int waveFrequence;
     [SerializeField] private int waveCount;
     public Transform spawningPoint;
     public GameObject enemyPrefab;
