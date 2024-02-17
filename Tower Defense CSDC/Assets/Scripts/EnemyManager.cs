@@ -7,8 +7,13 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager Instance;
     public Dictionary<EnemyTypes.EnemyType, EnemyInfo> enemyDictionary;
-    public EnemyInfo littleGoblinInfo;
     public List<EnemyTypes.EnemyType> sortedEnemyListByCost;
+    public EnemyInfo littleGoblinInfo;
+    public EnemyInfo sporeGuyInfo;
+    
+    
+
+
 
 
     private void Awake()
@@ -27,7 +32,7 @@ public class EnemyManager : MonoBehaviour
             Instance = this;
             enemyDictionary = new Dictionary<EnemyTypes.EnemyType, EnemyInfo>();
             SetUpEnemyDictionary();
-            SetUpEnemyListSortedByCost();
+            SetUpEnemyListSortedByCostIncrease();
             
         }
     }
@@ -35,16 +40,23 @@ public class EnemyManager : MonoBehaviour
     public void SetUpEnemyDictionary()
     {
         enemyDictionary.Add(EnemyTypes.EnemyType.LittleGoblin, littleGoblinInfo);
+        enemyDictionary.Add(EnemyTypes.EnemyType.SporeGuy, sporeGuyInfo);
     }
 
-    public void SetUpEnemyListSortedByCost()
+    public List<EnemyTypes.EnemyType> GetEnemyListSortedByCostDecrease() //decrease order
+    {
+        List<EnemyTypes.EnemyType> enemyListSortedByCostDecrease = new List<EnemyTypes.EnemyType>(this.sortedEnemyListByCost);
+        enemyListSortedByCostDecrease.Reverse();
+        return enemyListSortedByCostDecrease;
+
+    }
+
+    public void SetUpEnemyListSortedByCostIncrease()
     {
         this.sortedEnemyListByCost = enemyDictionary
         .OrderBy(entry => entry.Value.cost) // Order by the cost of the EnemyInfo
         .Select(entry => entry.Key) // Select the keys after sorting
         .ToList();
-        this.sortedEnemyListByCost.Reverse();
-
     }
 
     public EnemyInfo GetEnemyInfo(EnemyTypes.EnemyType enemyType)
