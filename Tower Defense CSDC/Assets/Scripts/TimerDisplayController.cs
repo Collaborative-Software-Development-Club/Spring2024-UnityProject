@@ -16,7 +16,10 @@ public class TimerDisplayController : MonoBehaviour
     {
         startTime = Time.time;
         waveManager = GameObject.Find("WaveManager").GetComponent<WaveManager>();
-        timeToNextWave = waveManager.waveFrequence;
+
+        
+        timeToNextWave = (float)waveManager.waveFrequence;
+        Debug.Log(waveManager.waveFrequence);
     }
 
     // Update is called once per frame
