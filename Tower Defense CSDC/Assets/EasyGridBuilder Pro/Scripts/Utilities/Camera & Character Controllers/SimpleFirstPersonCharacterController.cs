@@ -44,7 +44,7 @@ namespace SoulGames.Utilities
 
         private void Update()
         {
-            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.3f, groundLayerMask);
+            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.7f + 0.7f, groundLayerMask);
 
             HandleInput();
             HandleSpeed();
