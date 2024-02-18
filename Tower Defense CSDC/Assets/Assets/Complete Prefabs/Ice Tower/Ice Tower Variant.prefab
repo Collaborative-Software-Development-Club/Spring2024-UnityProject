@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2321305570954160275}
   - component: {fileID: 8620651546523558948}
   - component: {fileID: 8156289976728961686}
+  - component: {fileID: 4165662320864292181}
   m_Layer: 0
   m_Name: Ice Tower Variant
   m_TagString: Untagged
@@ -147,6 +148,28 @@ MonoBehaviour:
   spawnLocalScale: {x: 1, y: 1, z: 1}
   destroySpawnnedAfterDelay: 0
   destroyDelay: 1
+--- !u!64 &4165662320864292181
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143855440400968401}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8670151273213183110, guid: 7c795e100f4cb3241a85fb4c7d834790, type: 3}
 --- !u!1 &6713807644342978685
 GameObject:
   m_ObjectHideFlags: 0
