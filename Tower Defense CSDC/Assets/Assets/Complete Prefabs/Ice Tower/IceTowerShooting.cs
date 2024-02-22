@@ -10,7 +10,10 @@ public class IceTowerShooting : MonoBehaviour
     [SerializeField] private String[] tagsToCheck;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform projectileSpawn;
-    [SerializeField] private float moveSpeed = 10f;
+    // BULLET BEHAVIOR
+    [SerializeField] private IProjectile.ProjectileType type;
+    [SerializeField] private float baseDamage;
+    [SerializeField] private float projectileSpeed = 10f;
     private List<objData> objectsToTrack;
     private List<GameObject> projectilePool;
     private struct objData {
@@ -38,15 +41,16 @@ public class IceTowerShooting : MonoBehaviour
                 objectsToTrack.Remove(candidate);
                 tempCandidate.isTracking = true;
                 objectsToTrack.Add(tempCandidate);
-                projectilePool.Add(Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.identity));
-                
+                GameObject instantiated = Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.identity);
+                instantiated.GetComponent<IceProjectileBehavior>().SetProperties(type, baseDamage, projectileSpeed);
+                projectilePool.Add(instantiated);
             }
         }
     }
     void FixedUpdate() {
         foreach(GameObject proj in projectilePool.ToArray()) {
             int index = projectilePool.IndexOf(proj);
-            moveToObject(objectsToTrack[index].obj, proj, moveSpeed);
+            moveToObject(objectsToTrack[index].obj, proj, projectileSpeed);
             if (proj.GetComponent<IceProjectileBehavior>().markForDestroy) { // for ice towers
                 GameObject temp = proj;
                 projectilePool.Remove(proj);
