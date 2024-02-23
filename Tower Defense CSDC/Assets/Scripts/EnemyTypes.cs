@@ -9,5 +9,9 @@ public class EnemyTypes : MonoBehaviour
     {
         LittleGoblin,
         SporeGuy,
+        FloatingEye,
+        IceMage,
+        LavaHound,
+        Armored,
     }
 }

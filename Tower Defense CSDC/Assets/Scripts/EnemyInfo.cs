@@ -11,6 +11,7 @@ public class EnemyInfo : MonoBehaviour
     public int cost;
     public int damage;
     public GameObject model;
+    public EnemyManager.propertyType propertyType;
 
 
 }

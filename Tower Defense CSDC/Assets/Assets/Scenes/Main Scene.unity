@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1758,7 +1758,7 @@ MonoBehaviour:
   waveCount: 0
   spawningPoint: {fileID: 1992404696}
   enemyPrefab: {fileID: 855631649523160213, guid: 32dcea6300da34fc8a427f26923d3704, type: 3}
-  wavesCurrency: 0a000000
+  wavesCurrency: 64000000
   spawningEnemyList: 
 --- !u!1 &168328964
 GameObject:
@@ -17297,6 +17297,10 @@ GameObject:
   - component: {fileID: 1636108680}
   - component: {fileID: 1636108679}
   - component: {fileID: 1636108681}
+  - component: {fileID: 1636108685}
+  - component: {fileID: 1636108684}
+  - component: {fileID: 1636108683}
+  - component: {fileID: 1636108682}
   m_Layer: 0
   m_Name: EnemyManager
   m_TagString: Untagged
@@ -17332,11 +17336,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  health: 100
-  speed: 10
+  health: 50
+  speed: 20
   cost: 1
-  damage: 0
+  damage: 5
   model: {fileID: 919132149155446097, guid: a9799a06f4a234e639eae2d4c012af08, type: 3}
+  propertyType: 4
 --- !u!114 &1636108680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17352,6 +17357,10 @@ MonoBehaviour:
   sortedEnemyListByCost: 
   littleGoblinInfo: {fileID: 1636108679}
   sporeGuyInfo: {fileID: 1636108679}
+  floatingEyeInfo: {fileID: 1636108685}
+  armoredInfo: {fileID: 1636108684}
+  iceMageInfo: {fileID: 1636108683}
+  lavaHoundInfo: {fileID: 1636108682}
 --- !u!114 &1636108681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17367,9 +17376,86 @@ MonoBehaviour:
   type: 1
   health: 100
   speed: 10
-  cost: 3
-  damage: 0
+  cost: 5
+  damage: 5
   model: {fileID: 919132149155446097, guid: 17f2dea524fc04ae79a952c39a81ea72, type: 3}
+  propertyType: 3
+--- !u!114 &1636108682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636108677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9adaca9011514c0abcfacc46b81dd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 4
+  health: 100
+  speed: 20
+  cost: 5
+  damage: 10
+  model: {fileID: 919132149155446097, guid: 359213d1fa123453e89955aa476aeb7e, type: 3}
+  propertyType: 0
+--- !u!114 &1636108683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636108677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9adaca9011514c0abcfacc46b81dd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  health: 100
+  speed: 5
+  cost: 5
+  damage: 15
+  model: {fileID: 919132149155446097, guid: 0bab693b836cf437c9325c39bd8462b9, type: 3}
+  propertyType: 1
+--- !u!114 &1636108684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636108677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9adaca9011514c0abcfacc46b81dd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 5
+  health: 150
+  speed: 5
+  cost: 20
+  damage: 15
+  model: {fileID: 919132149155446097, guid: 0629ee33b4f8044bf90363289aa2ed8e, type: 3}
+  propertyType: 4
+--- !u!114 &1636108685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636108677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9adaca9011514c0abcfacc46b81dd30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  health: 50
+  speed: 20
+  cost: 10
+  damage: 5
+  model: {fileID: 919132149155446097, guid: 5cf97818440e9490b87baebb21869d3e, type: 3}
+  propertyType: 2
 --- !u!1 &1647228342
 GameObject:
   m_ObjectHideFlags: 0
