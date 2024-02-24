@@ -97,4 +97,4 @@ public class EnemyManager : MonoBehaviour
 }
 
 
-// todo: set up enemy currency
+// todo: scale is not working
