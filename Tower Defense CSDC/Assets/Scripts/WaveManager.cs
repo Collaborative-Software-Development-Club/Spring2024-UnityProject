@@ -69,7 +69,7 @@ public class WaveManager : MonoBehaviour
             GameObject enemyModel = Instantiate(newEnemyInfo.model, enemy.transform);
 
             //Debug.Log(enemyType);
-            yield return new WaitForSeconds(1f); // time space for spawning
+            yield return new WaitForSeconds(3f); // time space for spawning
         }
 
     }

@@ -69,6 +69,8 @@ public class EnemyController : MonoBehaviour
         enemyInfo.cost = newEnemyInfo.cost;
         enemyInfo.damage = newEnemyInfo.damage;
         enemyInfo.model = newEnemyInfo.model;
+        enemyInfo.propertyType = newEnemyInfo.propertyType;
+        enemyInfo.scale = newEnemyInfo.scale;
 
 
     }
