@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IceTowerShooting : MonoBehaviour
+public class TowerShooting : MonoBehaviour
 {
     [SerializeField] private SphereCollider detectionCollider;
     [SerializeField] private float detectionMaximumRadius = 15f;
@@ -42,7 +42,7 @@ public class IceTowerShooting : MonoBehaviour
                 tempCandidate.isTracking = true;
                 objectsToTrack.Add(tempCandidate);
                 GameObject instantiated = Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.identity);
-                instantiated.GetComponent<IceProjectileBehavior>().SetProperties(type, baseDamage, projectileSpeed);
+                instantiated.GetComponent<ProjectileBehavior>().SetProperties(type, baseDamage, projectileSpeed);
                 projectilePool.Add(instantiated);
             }
         }
@@ -51,7 +51,7 @@ public class IceTowerShooting : MonoBehaviour
         foreach(GameObject proj in projectilePool.ToArray()) {
             int index = projectilePool.IndexOf(proj);
             moveToObject(objectsToTrack[index].obj, proj, projectileSpeed);
-            if (proj.GetComponent<IceProjectileBehavior>().markForDestroy) { // for ice towers
+            if (proj.GetComponent<ProjectileBehavior>().markForDestroy) { // for ice towers
                 GameObject temp = proj;
                 projectilePool.Remove(proj);
                 Destroy(temp);
