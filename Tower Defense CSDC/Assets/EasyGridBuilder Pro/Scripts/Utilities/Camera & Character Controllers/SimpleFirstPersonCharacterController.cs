@@ -53,7 +53,6 @@ namespace SoulGames.Utilities
                 if (hit.distance < 2.4f) grounded = true;
                 else grounded = false;
             }
-            Debug.Log(grounded);
             HandleInput();
             HandleSpeed();
 
