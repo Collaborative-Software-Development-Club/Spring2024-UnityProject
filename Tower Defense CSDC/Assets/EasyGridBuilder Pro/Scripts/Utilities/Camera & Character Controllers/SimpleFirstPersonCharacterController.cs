@@ -48,8 +48,12 @@ namespace SoulGames.Utilities
 
         private void Update()
         {
-            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.7f + 0.7f, groundLayerMask);
-
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position - new Vector3(0, playerHeight, 0), Vector3.down, out hit)) {
+                if (hit.distance < 2.4f) grounded = true;
+                else grounded = false;
+            }
+            Debug.Log(grounded);
             HandleInput();
             HandleSpeed();
 
