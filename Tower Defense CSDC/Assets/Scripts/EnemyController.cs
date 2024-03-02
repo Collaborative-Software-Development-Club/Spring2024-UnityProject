@@ -25,10 +25,11 @@ public class EnemyController : MonoBehaviour
         {
 
             Vector3 dir = target.position - transform.position;
+            dir.y = 0;
             transform.Translate(dir.normalized * enemyInfo.speed * Time.deltaTime, Space.World);
 
             // change target
-            if (Vector3.Distance(transform.position, target.position) <= 1f && nodesNum < nodesManager.nodeList.Length)
+            if (Vector3.Distance(transform.position, target.position) <= 10f && nodesNum < nodesManager.nodeList.Length)
             {
                 nodesNum++;
                 if (nodesNum < nodesManager.nodeList.Length)
@@ -71,6 +72,7 @@ public class EnemyController : MonoBehaviour
         enemyInfo.model = newEnemyInfo.model;
         enemyInfo.propertyType = newEnemyInfo.propertyType;
         enemyInfo.scale = newEnemyInfo.scale;
+        enemyInfo.hasGravity = newEnemyInfo.hasGravity;
 
 
     }

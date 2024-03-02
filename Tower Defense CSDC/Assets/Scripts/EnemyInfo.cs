@@ -13,6 +13,6 @@ public class EnemyInfo : MonoBehaviour
     public GameObject model;
     public EnemyManager.propertyType propertyType;
     public int scale;
-
+    public bool hasGravity;
 
 }
