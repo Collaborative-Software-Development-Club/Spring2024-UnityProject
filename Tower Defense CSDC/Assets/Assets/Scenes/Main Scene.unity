@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5493,7 +5493,7 @@ GameObject:
   - component: {fileID: 484904043}
   - component: {fileID: 484904042}
   - component: {fileID: 484904041}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: First Person Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6736,7 +6736,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 588821587}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Player Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6752,7 +6752,7 @@ Transform:
   m_GameObject: {fileID: 588821586}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8700,7 +8700,7 @@ GameObject:
   - component: {fileID: 735806120}
   - component: {fileID: 735806122}
   - component: {fileID: 735806121}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: First Person Character Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8742,8 +8742,7 @@ MonoBehaviour:
   jumpForce: 12
   jumpCooldown: 0.25
   airMultiplier: 0.4
-  playerHeight: 2
-  crouchFactor: 0
+  groundDetectionLength: 3.33
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 1
@@ -21619,7 +21618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2140374363}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Camera Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21635,7 +21634,7 @@ Transform:
   m_GameObject: {fileID: 2140374362}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
