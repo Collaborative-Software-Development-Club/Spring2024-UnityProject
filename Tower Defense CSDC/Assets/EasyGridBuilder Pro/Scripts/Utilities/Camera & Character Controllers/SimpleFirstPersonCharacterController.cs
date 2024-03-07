@@ -50,8 +50,6 @@ namespace SoulGames.Utilities
             HandleInput();
             HandleSpeed();
 
-            Debug.Log(hitInfo.distance);
-
         }
 
         private void FixedUpdate()
