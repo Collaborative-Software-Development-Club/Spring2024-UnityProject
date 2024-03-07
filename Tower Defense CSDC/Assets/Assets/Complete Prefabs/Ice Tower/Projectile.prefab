@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5340895152464198189}
   - component: {fileID: 5140262749299454720}
   - component: {fileID: 5176210154972641267}
+  - component: {fileID: 5050012798568816708}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -119,3 +120,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   markForDestroy: 0
+--- !u!65 &5050012798568816708
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546074772319253445}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.6, y: 19.58, z: 10.64}
+  m_Center: {x: 0, y: 0, z: 0}
