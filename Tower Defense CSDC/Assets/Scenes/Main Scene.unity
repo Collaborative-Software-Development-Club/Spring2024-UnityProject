@@ -5560,7 +5560,7 @@ GameObject:
   - component: {fileID: 484904043}
   - component: {fileID: 484904042}
   - component: {fileID: 484904041}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: First Person Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8819,8 +8819,7 @@ MonoBehaviour:
   jumpForce: 12
   jumpCooldown: 0.25
   airMultiplier: 0.4
-  playerHeight: 0
-  crouchFactor: 0
+  groundDetectionLength: 4
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 1
