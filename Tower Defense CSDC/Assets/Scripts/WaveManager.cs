@@ -60,16 +60,31 @@ public class WaveManager : MonoBehaviour
             spawningEnemyList.RemoveAt(nextRandom); // get random enemy and remove it from spawning list
 
             GameObject enemy = Instantiate(enemyPrefab, spawningPoint); // spawn enemy object
-
             
+            
+
+
             enemy.name = enemyType.ToString(); // set enemy object name
             EnemyController enemyController = enemy.GetComponent<EnemyController>();
             EnemyInfo newEnemyInfo = EnemyManager.Instance.GetEnemyInfo(enemyType);
             enemyController.SetEnemyInfo(newEnemyInfo);
             GameObject enemyModel = Instantiate(newEnemyInfo.model, enemy.transform);
+            Rigidbody enemyRigidbody = enemy.GetComponent<Rigidbody>();
+            enemyRigidbody.useGravity = newEnemyInfo.hasGravity;
+
+            Vector3 scaleSize = new Vector3(3, 4, 3);
+
+
+            if (newEnemyInfo.type == EnemyTypes.EnemyType.Armored)
+            {
+                BoxCollider enemyBoxCollider = enemy.GetComponent<BoxCollider>();
+                enemyBoxCollider.size = Vector3.Scale(scaleSize, enemy.transform.localScale);
+            }
+
+
 
             //Debug.Log(enemyType);
-            yield return new WaitForSeconds(1f); // time space for spawning
+            yield return new WaitForSeconds(3f); // time space for spawning
         }
 
     }

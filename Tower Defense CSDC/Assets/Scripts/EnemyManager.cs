@@ -5,11 +5,26 @@ using System.Linq;
 
 public class EnemyManager : MonoBehaviour
 {
+
+    public enum propertyType
+    {
+        Fire,
+        Ice,
+        Floating,
+        Poison,
+        Basic
+    }
+
     public static EnemyManager Instance;
     public Dictionary<EnemyTypes.EnemyType, EnemyInfo> enemyDictionary;
     public List<EnemyTypes.EnemyType> sortedEnemyListByCost;
     public EnemyInfo littleGoblinInfo;
     public EnemyInfo sporeGuyInfo;
+    public EnemyInfo floatingEyeInfo;
+    public EnemyInfo armoredInfo;
+    public EnemyInfo iceMageInfo;
+    public EnemyInfo lavaHoundInfo;
+    
     
     
 
@@ -41,6 +56,10 @@ public class EnemyManager : MonoBehaviour
     {
         enemyDictionary.Add(EnemyTypes.EnemyType.LittleGoblin, littleGoblinInfo);
         enemyDictionary.Add(EnemyTypes.EnemyType.SporeGuy, sporeGuyInfo);
+        enemyDictionary.Add(EnemyTypes.EnemyType.FloatingEye, floatingEyeInfo);
+        enemyDictionary.Add(EnemyTypes.EnemyType.IceMage, iceMageInfo);
+        enemyDictionary.Add(EnemyTypes.EnemyType.LavaHound, lavaHoundInfo);
+        enemyDictionary.Add(EnemyTypes.EnemyType.Armored, armoredInfo);
     }
 
     public List<EnemyTypes.EnemyType> GetEnemyListSortedByCostDecrease() //decrease order
@@ -76,3 +95,6 @@ public class EnemyManager : MonoBehaviour
 
 
 }
+
+
+// todo: scale is not working

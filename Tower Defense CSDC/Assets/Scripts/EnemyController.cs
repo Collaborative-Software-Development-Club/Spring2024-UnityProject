@@ -5,15 +5,42 @@ using System.Collections.Generic;
 public class EnemyController : MonoBehaviour
 {
     public EnemyInfo enemyInfo;
+    public NodesManager nodesManager;
+    public Transform target;
+    public int nodesNum = 0;
     
 
     private void Start()
     {
-
+        nodesManager = GameObject.Find("NodesManager").GetComponent<NodesManager>();
+        transform.localScale = new Vector3(enemyInfo.scale, enemyInfo.scale, enemyInfo.scale);
+        target = nodesManager.nodeList[0].transform;
     }
     private void Update()
     {
 
+        // moving to target until reach the end
+
+        if (nodesNum < nodesManager.nodeList.Length)
+        {
+
+            Vector3 dir = target.position - transform.position;
+            dir.y = 0;
+            transform.Translate(dir.normalized * enemyInfo.speed * Time.deltaTime, Space.World);
+
+            // change target
+            if (Vector3.Distance(transform.position, target.position) <= 10f && nodesNum < nodesManager.nodeList.Length)
+            {
+                nodesNum++;
+                if (nodesNum < nodesManager.nodeList.Length)
+                {
+                    target = nodesManager.nodeList[nodesNum].transform;
+                }
+            }
+        }
+
+
+        //destroy when health reach 0
         if (enemyInfo.health == 0)
         {
             DestroyThisUnit();
@@ -43,6 +70,9 @@ public class EnemyController : MonoBehaviour
         enemyInfo.cost = newEnemyInfo.cost;
         enemyInfo.damage = newEnemyInfo.damage;
         enemyInfo.model = newEnemyInfo.model;
+        enemyInfo.propertyType = newEnemyInfo.propertyType;
+        enemyInfo.scale = newEnemyInfo.scale;
+        enemyInfo.hasGravity = newEnemyInfo.hasGravity;
 
 
     }
