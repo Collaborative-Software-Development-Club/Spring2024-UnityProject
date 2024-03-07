@@ -20,10 +20,8 @@ namespace SoulGames.Utilities
         
         [Header("Ground Check")]
         [Space]
-        [Tooltip("Player collider height")]
-        [SerializeField]private float playerHeight;
-        [Tooltip("Factor by which rigidbody shrinks when crouching")]
-        [SerializeField]private float crouchFactor;
+        [Tooltip("Length of raycast cast to detect the ground")]
+        [SerializeField]private float groundDetectionLength;
         [Tooltip("Layer Mask to check ground. Used for Jump & Fall")]
         [SerializeField]private LayerMask groundLayerMask;
         [Tooltip("Player Position transform empty game object")]
@@ -48,8 +46,7 @@ namespace SoulGames.Utilities
 
         private void Update()
         {
-            grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.7f + 0.7f, groundLayerMask);
-
+            grounded = Physics.Raycast(transform.position, Vector3.down, out RaycastHit hitInfo, groundDetectionLength, groundLayerMask);
             HandleInput();
             HandleSpeed();
 
@@ -75,10 +72,10 @@ namespace SoulGames.Utilities
             }
 
             //Handles sprinting input
-            if (Input.GetKey(KeyCode.LeftShift)) {
+            if (Input.GetKey(KeyCode.LeftShift) && grounded) {
                 moveSpeed = sprintSpeed;
             } 
-            else {
+            else if(grounded){
                 moveSpeed = walkSpeed;
             }
 
