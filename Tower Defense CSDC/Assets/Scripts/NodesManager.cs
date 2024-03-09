@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class NodesManager : MonoBehaviour
 {
-    public GameObject[] nodeList;
+    public GameObject[] pathList;
 }

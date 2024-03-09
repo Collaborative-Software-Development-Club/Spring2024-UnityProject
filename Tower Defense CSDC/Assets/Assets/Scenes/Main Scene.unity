@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1756,10 +1756,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveFrequence: 1
   waveCount: 0
-  spawningPoint: {fileID: 1992404696}
+  EnemyListTransform: {fileID: 1221796502}
   enemyPrefab: {fileID: 855631649523160213, guid: 32dcea6300da34fc8a427f26923d3704, type: 3}
   wavesCurrency: 64000000
   spawningEnemyList: 
+  nodePaths:
+  - {fileID: 1563438024}
+  - {fileID: 1147334373}
+  - {fileID: 965786993}
+  - {fileID: 227384731}
+  - {fileID: 612706820}
 --- !u!1 &168328964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,6 +2050,132 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
+=======
+--- !u!1 &192914249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+  m_PrefabInstance: {fileID: 34905344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &192914250 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+  m_PrefabInstance: {fileID: 34905344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &192914251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192914249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbc57496e17d42d397d2f3da4fa8a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineTime: 3
+  resourceIncreaseAmount: 5
+  materialType: 1
+--- !u!135 &192914252
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 192914249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.006
+  m_Center: {x: 0.000035804696, y: 0.00005003973, z: 0.00009463623}
+--- !u!1 &196728628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6206987232480354898, guid: 42710d6b216a28d4c92f362d93a4ffc0, type: 3}
+  m_PrefabInstance: {fileID: 351268564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &196728629 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6730760128100841704, guid: 42710d6b216a28d4c92f362d93a4ffc0, type: 3}
+  m_PrefabInstance: {fileID: 351268564}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &196728630
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196728628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 14.138569, z: 5}
+  m_Center: {x: -0.2294209, y: 7.0692844, z: -0.2}
+--- !u!114 &196728631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196728628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbc57496e17d42d397d2f3da4fa8a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineTime: 2
+  resourceIncreaseAmount: 3
+  materialType: 0
+--- !u!1 &205090986
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 205090987}
+  m_Layer: 0
+  m_Name: Node3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &205090987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205090986}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 441, y: -1.943481, z: 565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 612706821}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
 --- !u!1 &207174897
 GameObject:
   m_ObjectHideFlags: 0
@@ -2571,6 +2703,41 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 227278098}
   m_CullTransparentMesh: 1
+--- !u!1 &227384731
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 227384732}
+  m_Layer: 0
+  m_Name: Path4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &227384732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 227384731}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 469082810}
+  - {fileID: 372076403}
+  - {fileID: 789185187}
+  - {fileID: 1677636127}
+  m_Father: {fileID: 1470964719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &242498927
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,6 +2936,45 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245298005}
   m_CullTransparentMesh: 0
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
+=======
+--- !u!1 &256259658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 256259659}
+  m_Layer: 0
+  m_Name: StartNode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &256259659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256259658}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 510.6, y: -1.943481, z: 661.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 965786994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &259260862 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 32090514860647576, guid: 0b40cd3e495cf40a18b73ef67b5cba07, type: 3}
+  m_PrefabInstance: {fileID: 941743138}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
 --- !u!1 &259699098
 GameObject:
   m_ObjectHideFlags: 0
@@ -4119,6 +4325,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 144}
   m_SizeDelta: {x: 0, y: 128}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &372076402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372076403}
+  m_Layer: 0
+  m_Name: Node2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &372076403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372076402}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 272, y: -1.943481, z: 633}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227384732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &389934183
 GameObject:
   m_ObjectHideFlags: 0
@@ -5250,6 +5487,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464749233}
   m_CullTransparentMesh: 0
+--- !u!1 &469082809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 469082810}
+  m_Layer: 0
+  m_Name: StartNode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &469082810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 469082809}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 276, y: -1.943481, z: 461}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227384732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &470805511
 GameObject:
   m_ObjectHideFlags: 0
@@ -5839,6 +6107,37 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &492448855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 492448856}
+  m_Layer: 0
+  m_Name: Node2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &492448856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492448855}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 400, y: -1.943481, z: 526}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 612706821}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &499203421
 GameObject:
   m_ObjectHideFlags: 0
@@ -7005,6 +7304,40 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1660870955284901104, guid: faad0f70a31c1470db795b49ba6089cd, type: 3}
   m_PrefabInstance: {fileID: 611238654}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &612706820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 612706821}
+  m_Layer: 0
+  m_Name: Path5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &612706821
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612706820}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2145963720}
+  - {fileID: 492448856}
+  - {fileID: 205090987}
+  m_Father: {fileID: 1470964719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &624866259
 GameObject:
   m_ObjectHideFlags: 0
@@ -9597,6 +9930,132 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
+=======
+--- !u!1 &789185186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 789185187}
+  m_Layer: 0
+  m_Name: Node3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &789185187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789185186}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 503, y: -1.943481, z: 617}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227384732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &793762405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5170062221493403372, guid: 49bd89651a88d5641964537802c93dc1, type: 3}
+  m_PrefabInstance: {fileID: 1917633515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &793762406 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5545075313475036246, guid: 49bd89651a88d5641964537802c93dc1, type: 3}
+  m_PrefabInstance: {fileID: 1917633515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &793762407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793762405}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 15.279516, z: 5}
+  m_Center: {x: -0.29, y: 7.639758, z: 0.18927455}
+--- !u!114 &793762408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793762405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbc57496e17d42d397d2f3da4fa8a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineTime: 2
+  resourceIncreaseAmount: 3
+  materialType: 0
+--- !u!1 &805692796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+  m_PrefabInstance: {fileID: 1425013868}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &805692797 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+  m_PrefabInstance: {fileID: 1425013868}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &805692798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805692796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbc57496e17d42d397d2f3da4fa8a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineTime: 3
+  resourceIncreaseAmount: 5
+  materialType: 1
+--- !u!135 &805692799
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 805692796}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.006
+  m_Center: {x: 0.000035804696, y: 0.00005003973, z: 0.00009463623}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
 --- !u!1001 &811619252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11278,6 +11737,105 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956627327}
   m_CullTransparentMesh: 1
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
+=======
+--- !u!1 &965786993
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965786994}
+  m_Layer: 0
+  m_Name: Path3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &965786994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965786993}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 256259659}
+  - {fileID: 1928167835}
+  m_Father: {fileID: 1470964719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &974066598
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 946194100}
+    m_Modifications:
+    - target: {fileID: 5790400031947085379, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_Name
+      value: treeVariant5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.73
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5790400031947085379, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1441190601}
+    - targetCorrespondingSourceObject: {fileID: 5790400031947085379, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1441190600}
+  m_SourcePrefab: {fileID: 100100000, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
 --- !u!1 &981880224
 GameObject:
   m_ObjectHideFlags: 0
@@ -12075,11 +12633,15 @@ Transform:
   m_GameObject: {fileID: 1078815724}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 563.9, y: -0.5999999, z: 564.3}
+  m_LocalPosition: {x: 562.9768, y: -1.943481, z: 564.86346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
   m_Father: {fileID: 1011769837}
+=======
+  m_Father: {fileID: 1563438025}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1083469858
 GameObject:
@@ -12726,6 +13288,40 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145075760}
   m_CullTransparentMesh: 1
+--- !u!1 &1147334373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147334374}
+  m_Layer: 0
+  m_Name: Path2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1147334374
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147334373}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2024124342}
+  - {fileID: 1181693269}
+  - {fileID: 1477484190}
+  m_Father: {fileID: 1470964719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1151253775
 GameObject:
   m_ObjectHideFlags: 0
@@ -12930,6 +13526,37 @@ MonoBehaviour:
   content: 
   objectNameAsHeader: 0
   objectBuildSOToolTipAsContent: 0
+--- !u!1 &1181693268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1181693269}
+  m_Layer: 0
+  m_Name: Node2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1181693269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181693268}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 493.8, y: -1.943481, z: 463.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1147334374}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1183141991
 GameObject:
   m_ObjectHideFlags: 0
@@ -13405,6 +14032,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1211872360}
   m_CullTransparentMesh: 0
+--- !u!1 &1221796501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1221796502}
+  m_Layer: 0
+  m_Name: EnemyList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1221796502
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1221796501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1636108678}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1225088441
 GameObject:
   m_ObjectHideFlags: 0
@@ -14102,6 +14760,11 @@ Transform:
   - {fileID: 1636108678}
   - {fileID: 157155357}
   - {fileID: 1470964719}
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
+=======
+  - {fileID: 1968686746}
+  - {fileID: 348430614}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
   m_Father: {fileID: 217181056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1258798290
@@ -16389,7 +17052,15 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
   - {fileID: 1011769837}
+=======
+  - {fileID: 1563438025}
+  - {fileID: 1147334374}
+  - {fileID: 965786994}
+  - {fileID: 227384732}
+  - {fileID: 612706821}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
   m_Father: {fileID: 1255089599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1470964720
@@ -16408,6 +17079,37 @@ MonoBehaviour:
   - {fileID: 1733823743}
   - {fileID: 1078815724}
   - {fileID: 1968686745}
+--- !u!1 &1477484189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1477484190}
+  m_Layer: 0
+  m_Name: Node3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1477484190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1477484189}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 502.8, y: -1.943481, z: 560.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1147334374}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1482019407
 GameObject:
   m_ObjectHideFlags: 0
@@ -17081,6 +17783,88 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5325389289459652545, guid: 1210b5183c8d42846834610d247a010e, type: 3}
   m_PrefabInstance: {fileID: 1560545813}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
+=======
+--- !u!1 &1563438024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1563438025}
+  m_Layer: 0
+  m_Name: Path1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1563438025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563438024}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1733823744}
+  - {fileID: 1078815725}
+  m_Father: {fileID: 1470964719}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1608176437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6206987232480354898, guid: 42710d6b216a28d4c92f362d93a4ffc0, type: 3}
+  m_PrefabInstance: {fileID: 648173469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1608176438 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6730760128100841704, guid: 42710d6b216a28d4c92f362d93a4ffc0, type: 3}
+  m_PrefabInstance: {fileID: 648173469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1608176439
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608176437}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 14.138569, z: 5}
+  m_Center: {x: -0.2294209, y: 7.0692844, z: -0.2}
+--- !u!114 &1608176440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608176437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbc57496e17d42d397d2f3da4fa8a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineTime: 2
+  resourceIncreaseAmount: 3
+  materialType: 0
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
 --- !u!1 &1611521863
 GameObject:
   m_ObjectHideFlags: 0
@@ -17536,7 +18320,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1221796502}
   m_Father: {fileID: 1255089599}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1636108679
@@ -18071,6 +18856,132 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
+=======
+--- !u!1 &1674428418 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2406062217797246230, guid: 7ceed0bc2db1903419e85f3e96507c2a, type: 3}
+  m_PrefabInstance: {fileID: 1487245799}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1674428419 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3039890691350808492, guid: 7ceed0bc2db1903419e85f3e96507c2a, type: 3}
+  m_PrefabInstance: {fileID: 1487245799}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1674428420
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674428418}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 23.603336, z: 5}
+  m_Center: {x: -0.6, y: 11.801668, z: 0.25}
+--- !u!114 &1674428421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674428418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbc57496e17d42d397d2f3da4fa8a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineTime: 3
+  resourceIncreaseAmount: 5
+  materialType: 0
+--- !u!1 &1674450085 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2406062217797246230, guid: 7ceed0bc2db1903419e85f3e96507c2a, type: 3}
+  m_PrefabInstance: {fileID: 1183653081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1674450086 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3039890691350808492, guid: 7ceed0bc2db1903419e85f3e96507c2a, type: 3}
+  m_PrefabInstance: {fileID: 1183653081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1674450087
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674450085}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 23.603336, z: 5}
+  m_Center: {x: -0.6, y: 11.801668, z: 0.25}
+--- !u!114 &1674450088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674450085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbc57496e17d42d397d2f3da4fa8a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineTime: 3
+  resourceIncreaseAmount: 5
+  materialType: 0
+--- !u!1 &1677636126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677636127}
+  m_Layer: 0
+  m_Name: Node4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1677636127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677636126}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 503, y: -1.943481, z: 564.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 227384732}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
 --- !u!1 &1681943235
 GameObject:
   m_ObjectHideFlags: 0
@@ -18920,7 +19831,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733823744}
   m_Layer: 0
-  m_Name: Node1
+  m_Name: StartNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18935,11 +19846,15 @@ Transform:
   m_GameObject: {fileID: 1733823743}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 607.5, y: -0.5999999, z: 538.6}
+  m_LocalPosition: {x: 606.5768, y: -1.943481, z: 539.16345}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
   m_Father: {fileID: 1011769837}
+=======
+  m_Father: {fileID: 1563438025}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1740269377
 GameObject:
@@ -20411,6 +21326,115 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
+=======
+--- !u!1001 &1926408046
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1803600500}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1500.0002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1500.0002
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -358.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.118721
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 152.7
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9380502
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.024078634
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.18453123
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.2922847
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 8.803
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 19.638
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -33.086
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      propertyPath: m_Name
+      value: LargeMetal (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 221582791}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 221582790}
+  m_SourcePrefab: {fileID: 100100000, guid: 0448093a826794b0598f9c01b2e1e105, type: 3}
+--- !u!1 &1928167834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1928167835}
+  m_Layer: 0
+  m_Name: Node2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1928167835
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928167834}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 505.8, y: -1.943481, z: 564.86346}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 965786994}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
 --- !u!1 &1933068411
 GameObject:
   m_ObjectHideFlags: 0
@@ -20761,7 +21785,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1968686746}
   m_Layer: 0
-  m_Name: Node3
+  m_Name: EndNode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20776,11 +21800,15 @@ Transform:
   m_GameObject: {fileID: 1968686745}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 472, y: -0.5999999, z: 564.3}
+  m_LocalPosition: {x: 471.07678, y: -1.943481, z: 564.86346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
   m_Father: {fileID: 1011769837}
+=======
+  m_Father: {fileID: 1255089599}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1992404695
 GameObject:
@@ -20967,6 +21995,86 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+<<<<<<< Updated upstream:Tower Defense CSDC/Assets/Assets/Scenes/Main Scene.unity
+=======
+--- !u!1 &2020944410 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5790400031947085379, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+  m_PrefabInstance: {fileID: 84741826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2020944411 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6561870598021942521, guid: c87de20f50aa6af4f87a5e69cb9ecf5b, type: 3}
+  m_PrefabInstance: {fileID: 84741826}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2020944412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020944410}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 20.969189, z: 5}
+  m_Center: {x: 0.1, y: 10.484594, z: 0.23}
+--- !u!114 &2020944413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020944410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abbc57496e17d42d397d2f3da4fa8a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mineTime: 3
+  resourceIncreaseAmount: 5
+  materialType: 0
+--- !u!1 &2024124341
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2024124342}
+  m_Layer: 0
+  m_Name: StartNode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2024124342
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2024124341}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 454.4, y: -1.943481, z: 443.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1147334374}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes:Tower Defense CSDC/Assets/Scenes/Main Scene.unity
 --- !u!1 &2027210110
 GameObject:
   m_ObjectHideFlags: 0
@@ -22361,6 +23469,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144104783}
   m_CullTransparentMesh: 0
+--- !u!1 &2145963719
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2145963720}
+  m_Layer: 0
+  m_Name: StartNode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2145963720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145963719}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 391.3, y: -1.943481, z: 490.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 612706821}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

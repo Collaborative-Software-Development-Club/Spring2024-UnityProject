@@ -96,5 +96,3 @@ public class EnemyManager : MonoBehaviour
 
 }
 
-
-// todo: scale is not working
