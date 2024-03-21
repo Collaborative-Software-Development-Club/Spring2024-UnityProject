@@ -13,6 +13,10 @@ public class FinalStation : MonoBehaviour, IStation
         Debug.Log("Accessed final station!");
     }
 
+    public void OpenGUI() {
+        Debug.Log("Opened GUI");
+    }
+
     /// <summary>
     /// Closes the interface for the final station.
     /// </summary>

@@ -13,6 +13,10 @@ public class ElementStation : MonoBehaviour, IStation
         Debug.Log("Accessed element station!");
     }
 
+    public void OpenGUI() {
+        Debug.Log("Opened GUI");
+    }
+
     /// <summary>
     /// Closes the interface for the element station.
     /// </summary>

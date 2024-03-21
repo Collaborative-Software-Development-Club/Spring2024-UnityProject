@@ -7,6 +7,8 @@ public class BaseStation : MonoBehaviour, IStation
     public GameObject storedBuilding {get; set;}
     public delegate void HandlePlayerEnter(object o, StationEventArgs sArgs);
     public static event HandlePlayerEnter OnPlayerEnter;
+    public delegate void HandlePlayerExit(object o, StationEventArgs sArgs);
+    public static event HandlePlayerExit OnPlayerExit;
     private bool openedInterface = false;
 
     /// <summary>
@@ -18,12 +20,17 @@ public class BaseStation : MonoBehaviour, IStation
         OnPlayerEnter?.Invoke(this, new StationEventArgs(StationEventArgs.StationType.Base));
     }
 
+    public void OpenGUI() {
+        Debug.Log("Opened GUI");
+    }
+
     /// <summary>
     /// Closes the interface for the base station.
     /// </summary>
     public void CloseInterface() {
-        openedInterface = false;
         Debug.Log("Left base station!");
+        openedInterface = false;
+        OnPlayerExit?.Invoke(this, new StationEventArgs(StationEventArgs.StationType.Base));
     }
 
     /// <summary>

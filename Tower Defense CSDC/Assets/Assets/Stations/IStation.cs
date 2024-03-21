@@ -6,6 +6,7 @@ public interface IStation
 {
     public GameObject storedBuilding {get; set;}
     public void OpenInterface();
+    public void OpenGUI();
     public void CloseInterface();
     public void StoreBuilding();
     public void Build();
