@@ -5,11 +5,18 @@ using System.Collections.Generic;
 public class EnemyController : MonoBehaviour
 {
     public EnemyInfo enemyInfo;
+
+    //for moving
     public NodesManager nodesManager;
     public Transform target;
     public int nodesNum = 0;
     public List<Transform> nodeList;
     public int pathInt = 0;
+
+    //for taking damage
+    public float moreDamageScale = 1.25f;
+    public bool isHit = false;
+    
     
 
     private void Start()
@@ -44,7 +51,7 @@ public class EnemyController : MonoBehaviour
 
 
         //destroy when health reach 0
-        if (enemyInfo.health == 0)
+        if (enemyInfo.health <= 0)
         {
             DestroyThisUnit();
         }
@@ -55,7 +62,7 @@ public class EnemyController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void LosingHealth(int losedHealth)
+    public void LosingHealth(float losedHealth)
     {
         enemyInfo.health -= losedHealth;
     }
@@ -77,8 +84,30 @@ public class EnemyController : MonoBehaviour
         enemyInfo.scale = newEnemyInfo.scale;
         enemyInfo.hasGravity = newEnemyInfo.hasGravity;
 
-
     }
+
+
+    // for detect projectile and lose health
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Debug.Log("Taking Damage");
+            ProjectileBehavior projectileBehavior;
+            isHit = collision.gameObject.TryGetComponent<ProjectileBehavior>(out projectileBehavior);
+
+            if (isHit)
+            {
+
+
+                if (!projectileBehavior.Type.Equals(enemyInfo.type))
+                {
+                    LosingHealth(projectileBehavior.BaseDamage);
+                }
+            }
+        }
+    }
+
 
 
 
