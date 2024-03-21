@@ -11,12 +11,14 @@ public class WaveManager : MonoBehaviour
     public GameObject enemyPrefab;
     public List<int> wavesCurrency;
     public List<EnemyTypes.EnemyType> spawningEnemyList;
+    public NodesManager nodesManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
         spawningEnemyList = new List<EnemyTypes.EnemyType>();
+        nodesManager = GameObject.Find("NodesManager").GetComponent<NodesManager>();
         StartCoroutine(WaveTimer());
 
 
@@ -59,15 +61,19 @@ public class WaveManager : MonoBehaviour
             EnemyTypes.EnemyType enemyType = spawningEnemyList[nextRandom];
             spawningEnemyList.RemoveAt(nextRandom); // get random enemy and remove it from spawning list
 
+
+            int pathInt = nodesManager.GetRandomPathInt();
+            spawningPoint = nodesManager.GetSpawningPointFromPath(pathInt);
+
+            // Set Enemy Game Object
             GameObject enemy = Instantiate(enemyPrefab, spawningPoint); // spawn enemy object
-            
-            
-
-
             enemy.name = enemyType.ToString(); // set enemy object name
+
+            //Set Enemy Script
             EnemyController enemyController = enemy.GetComponent<EnemyController>();
             EnemyInfo newEnemyInfo = EnemyManager.Instance.GetEnemyInfo(enemyType);
             enemyController.SetEnemyInfo(newEnemyInfo);
+            enemyController.pathInt = pathInt;
             GameObject enemyModel = Instantiate(newEnemyInfo.model, enemy.transform);
             Rigidbody enemyRigidbody = enemy.GetComponent<Rigidbody>();
             enemyRigidbody.useGravity = newEnemyInfo.hasGravity;

@@ -8,20 +8,23 @@ public class EnemyController : MonoBehaviour
     public NodesManager nodesManager;
     public Transform target;
     public int nodesNum = 0;
+    public List<Transform> nodeList;
+    public int pathInt = 0;
     
 
     private void Start()
     {
         nodesManager = GameObject.Find("NodesManager").GetComponent<NodesManager>();
         transform.localScale = new Vector3(enemyInfo.scale, enemyInfo.scale, enemyInfo.scale);
-        target = nodesManager.nodeList[0].transform;
+        nodeList = nodesManager.GetNodesInPath(pathInt);
+        target = nodeList[0].transform;
     }
     private void Update()
     {
 
         // moving to target until reach the end
 
-        if (nodesNum < nodesManager.nodeList.Length)
+        if (nodesNum < nodeList.Count)
         {
 
             Vector3 dir = target.position - transform.position;
@@ -29,12 +32,12 @@ public class EnemyController : MonoBehaviour
             transform.Translate(dir.normalized * enemyInfo.speed * Time.deltaTime, Space.World);
 
             // change target
-            if (Vector3.Distance(transform.position, target.position) <= 10f && nodesNum < nodesManager.nodeList.Length)
+            if (Vector3.Distance(transform.position, target.position) <= 10f && nodesNum < nodeList.Count)
             {
                 nodesNum++;
-                if (nodesNum < nodesManager.nodeList.Length)
+                if (nodesNum < nodeList.Count)
                 {
-                    target = nodesManager.nodeList[nodesNum].transform;
+                    target = nodeList[nodesNum].transform;
                 }
             }
         }
