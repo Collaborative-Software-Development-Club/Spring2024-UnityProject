@@ -60,6 +60,7 @@ public class WaveManager : MonoBehaviour
             spawningEnemyList.RemoveAt(nextRandom); // get random enemy and remove it from spawning list
 
             GameObject enemy = Instantiate(enemyPrefab, spawningPoint); // spawn enemy object
+            enemy.tag = "Enemy";
             
             
 
