@@ -124,7 +124,7 @@ public class WaveManager : MonoBehaviour
             }
             else {
                 enemyNum = UnityEngine.Random.Range(0, waveCurrency / enemyCost);
-                Debug.Log(enemyNum);
+                //Debug.Log(enemyNum);
                 
             }
             waveCurrency -= enemyNum * enemyCost;

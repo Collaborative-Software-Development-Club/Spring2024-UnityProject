@@ -14,7 +14,8 @@ public class EnemyController : MonoBehaviour
     public int pathInt = 0;
 
     //for taking damage
-    public float moreDamageScale = 1.25f;
+    public float moreDamageScale = 2.0f;
+    public float immueDamageScale = 0.0f;
     public bool isHit = false;
     
     
@@ -88,24 +89,87 @@ public class EnemyController : MonoBehaviour
 
 
     // for detect projectile and lose health
-    private void OnCollisionEnter(Collision collision)
+    public void TakeDamageFromProjectile(IProjectile.ProjectileType projectileType, float baseDamage)
     {
-        if (collision.gameObject.CompareTag("Projectile"))
+        //float losingHealth = 0.0f;
+        EnemyTypes.EnemyType enemyType = enemyInfo.type;
+        float damageScale = 1.0f;
+
+        // for Spore Guy
+        if (enemyType == EnemyTypes.EnemyType.SporeGuy)
         {
-            Debug.Log("Taking Damage");
-            ProjectileBehavior projectileBehavior;
-            isHit = collision.gameObject.TryGetComponent<ProjectileBehavior>(out projectileBehavior);
-
-            if (isHit)
+            if (projectileType == IProjectile.ProjectileType.Poison)
             {
+                damageScale = immueDamageScale;
+            }
 
-
-                if (!projectileBehavior.Type.Equals(enemyInfo.type))
-                {
-                    LosingHealth(projectileBehavior.BaseDamage);
-                }
+            if (projectileType == IProjectile.ProjectileType.Fire)
+            {
+                damageScale = moreDamageScale;
             }
         }
+
+        // for Floating Eye
+        if (enemyType == EnemyTypes.EnemyType.FloatingEye)
+        {
+            if (projectileType == IProjectile.ProjectileType.Normal)
+            {
+                damageScale = immueDamageScale;
+            }
+
+        }
+
+        // for Armored
+        if (enemyType == EnemyTypes.EnemyType.Armored)
+        {
+            if (projectileType == IProjectile.ProjectileType.Normal)
+            {
+                damageScale = immueDamageScale;
+            }
+
+            if (projectileType == IProjectile.ProjectileType.Poison)
+            {
+                damageScale = moreDamageScale;
+            }
+        }
+
+        // for Ice Mage
+        if (enemyType == EnemyTypes.EnemyType.IceMage)
+        {
+            if (projectileType == IProjectile.ProjectileType.Ice)
+            {
+                damageScale = immueDamageScale;
+            }
+
+            if (projectileType == IProjectile.ProjectileType.Fire)
+            {
+                damageScale = moreDamageScale;
+            }
+        }
+
+        // for Lava Hount
+        if (enemyType == EnemyTypes.EnemyType.LavaHound)
+        {
+            if (projectileType == IProjectile.ProjectileType.Fire)
+            {
+                damageScale = immueDamageScale;
+            }
+
+            if (projectileType == IProjectile.ProjectileType.Ice)
+            {
+                damageScale = moreDamageScale;
+            }
+        }
+
+        float finalDamage = baseDamage * damageScale;
+
+        Debug.LogFormat("Enemy Type: {0}, Projectile Type: {1}, Base Damage: {2}, Damage Scale: {3}, Final Damage: {4} ",
+                    enemyType, projectileType, baseDamage, damageScale, finalDamage);
+
+
+        LosingHealth(finalDamage);
+
+
     }
 
 
