@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BaseStation : MonoBehaviour, IStation
 {
+    [SerializeField] private GameObject UIPanel;
     public GameObject storedBuilding {get; set;}
     public delegate void HandlePlayerEnter(object o, StationEventArgs sArgs);
     public static event HandlePlayerEnter OnPlayerEnter;
     public delegate void HandlePlayerExit(object o, StationEventArgs sArgs);
     public static event HandlePlayerExit OnPlayerExit;
     private bool openedInterface = false;
+
+    private void Awake() {if (UIPanel is not null) UIPanel.SetActive(false);}
 
     /// <summary>
     /// Opens the interface for base station.
@@ -22,6 +26,7 @@ public class BaseStation : MonoBehaviour, IStation
 
     public void OpenGUI() {
         Debug.Log("Opened GUI");
+        UIPanel.SetActive(true);
     }
 
     /// <summary>
@@ -31,6 +36,7 @@ public class BaseStation : MonoBehaviour, IStation
         Debug.Log("Left base station!");
         openedInterface = false;
         OnPlayerExit?.Invoke(this, new StationEventArgs(StationEventArgs.StationType.Base));
+        UIPanel.SetActive(false);
     }
 
     /// <summary>
