@@ -8,7 +8,7 @@ public interface IStation
     public void OpenInterface();
     public void OpenGUI();
     public void CloseInterface();
-    public void StoreBuilding();
+    public void StoreBuilding(GameObject replacement);
     public void Build();
     public GameObject GetStoredBuilding();
 }

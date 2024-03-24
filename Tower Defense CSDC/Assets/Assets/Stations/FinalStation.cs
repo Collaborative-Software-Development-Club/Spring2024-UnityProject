@@ -42,8 +42,8 @@ public class FinalStation : MonoBehaviour, IStation
     /// <summary>
     /// Stores a building into the station
     /// </summary>
-    public void StoreBuilding() {
-
+    public void StoreBuilding(GameObject replacement) {
+        storedBuilding = Instantiate(replacement, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.identity, this.transform);
     }
 
     /// <summary>
@@ -51,7 +51,9 @@ public class FinalStation : MonoBehaviour, IStation
     /// </summary>
     /// <returns> The stored building </returns>
     public GameObject GetStoredBuilding() {
-        return storedBuilding;
+        GameObject copy = Instantiate(storedBuilding);
+        Destroy(storedBuilding);
+        return copy;
     }
     public void Build() {
         

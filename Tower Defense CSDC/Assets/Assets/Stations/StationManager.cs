@@ -8,12 +8,14 @@ using UnityEngine.UIElements;
 public class StationManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text interactPrompt;
-    [SerializeField] private UnityEngine.UI.Button[] buttons;
     private IStation activeStation;
+    private StationEventArgs.StationType sType;
+    private GameObject stored;
 
     void OnEnable() {
         interactPrompt.enabled = false;
         activeStation = null;
+        stored = null;
 
         BaseStation.OnPlayerEnter += OpenInterface;
         BaseStation.OnPlayerExit += CloseInterface;
@@ -23,8 +25,6 @@ public class StationManager : MonoBehaviour
 
         FinalStation.OnPlayerEnter += OpenInterface;
         FinalStation.OnPlayerExit += CloseInterface;
-
-        foreach (UnityEngine.UI.Button b in buttons) { b.onClick.AddListener(CloseAll); }
     }
 
     void OnDisable() {
@@ -50,9 +50,10 @@ public class StationManager : MonoBehaviour
                 case StationEventArgs.StationType.Final:
                 break;
             }
+            sType = sArgs.stationType;
         }
     }
-    private void CloseAll() {
+    public void CloseAll() {
         Time.timeScale = 1.0f;
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;   
         UnityEngine.Cursor.visible = false;
@@ -73,7 +74,15 @@ public class StationManager : MonoBehaviour
             UnityEngine.Cursor.visible = true;
 
             activeStation.OpenGUI(); 
-            Debug.Log("PROPERKEY");
+        }
+        else if (activeStation != null && sType != StationEventArgs.StationType.Base && Input.GetMouseButtonDown(1) && stored != null) {
+            if (activeStation.storedBuilding == null) {
+                activeStation.StoreBuilding(stored);
+                Destroy(stored);
+            }
+        }
+        else if (activeStation != null && Input.GetMouseButtonDown(1) && stored == null) {
+            stored = activeStation.GetStoredBuilding();
         }
     }
 }

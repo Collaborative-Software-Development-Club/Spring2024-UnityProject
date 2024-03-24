@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BaseStation : MonoBehaviour, IStation
 {
     [SerializeField] private GameObject UIPanel;
+    [SerializeField] private GameObject buildingPrefab;
     public GameObject storedBuilding {get; set;}
     public delegate void HandlePlayerEnter(object o, StationEventArgs sArgs);
     public static event HandlePlayerEnter OnPlayerEnter;
@@ -42,8 +43,8 @@ public class BaseStation : MonoBehaviour, IStation
     /// <summary>
     /// Stores a building into the station
     /// </summary>
-    public void StoreBuilding() {
-
+    public void StoreBuilding(GameObject replacement) {
+        storedBuilding = Instantiate(replacement, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.identity, this.transform);
     }
 
     /// <summary>
@@ -51,10 +52,12 @@ public class BaseStation : MonoBehaviour, IStation
     /// </summary>
     /// <returns> The stored building </returns>
     public GameObject GetStoredBuilding() {
-        return storedBuilding;
+        GameObject copy = Instantiate(storedBuilding);
+        Destroy(storedBuilding);
+        return copy;
     }
 
     public void Build() {
-
+        storedBuilding = Instantiate(buildingPrefab, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.identity, this.transform);
     }
 }
