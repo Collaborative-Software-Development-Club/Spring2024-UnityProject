@@ -79,12 +79,6 @@ namespace SoulGames.Utilities
                 moveSpeed = walkSpeed;
             }
 
-            //Handles quitting the game
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Exit();
-            }
-
         }
 
         private void MovePlayer()
@@ -129,11 +123,6 @@ namespace SoulGames.Utilities
         private void ResetJump()
         {
             readyToJump = true;
-        }
-
-        private void Exit()
-        {
-            Application.Quit();
         }
     }
 }
