@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using SoulGames.EasyGridBuilderPro;
 
 public class StationManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class StationManager : MonoBehaviour
     private IStation activeStation;
     private StationEventArgs.StationType sType;
     private GameObject stored;
+    private List<EasyGridBuilderPro> easyGridBuilderProList;
+    private bool isActivelyBuilding = false;
+    
 
     void OnEnable() {
         interactPrompt.enabled = false;
@@ -25,6 +29,9 @@ public class StationManager : MonoBehaviour
 
         FinalStation.OnPlayerEnter += OpenInterface;
         FinalStation.OnPlayerExit += CloseInterface;
+        FinalStation.OnBuiltObject += SetToActiveBuild;
+
+        easyGridBuilderProList = MultiGridManager.Instance.easyGridBuilderProList;
     }
 
     void OnDisable() {
@@ -36,6 +43,10 @@ public class StationManager : MonoBehaviour
 
         FinalStation.OnPlayerEnter -= OpenInterface;
         FinalStation.OnPlayerExit -= CloseInterface;
+        FinalStation.OnBuiltObject -= SetToActiveBuild;
+
+        easyGridBuilderProList = null;
+
     }
 
     private void OpenInterface(object o, StationEventArgs sArgs) {
@@ -84,5 +95,15 @@ public class StationManager : MonoBehaviour
         else if (activeStation != null && Input.GetMouseButtonDown(1) && stored == null) {
             stored = activeStation.GetStoredBuilding();
         }
+        else if (Input.GetMouseButtonDown(0) && isActivelyBuilding) {
+            isActivelyBuilding = false;
+            foreach (EasyGridBuilderPro egbp in easyGridBuilderProList) {
+                egbp.TriggerBuildablePlacementCancelled();
+                egbp.SetGridMode(GridMode.None);
+            }
+        }
+    }
+    public void SetToActiveBuild(object o) {
+        isActivelyBuilding = true;
     }
 }

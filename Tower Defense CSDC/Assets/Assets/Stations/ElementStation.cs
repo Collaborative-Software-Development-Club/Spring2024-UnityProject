@@ -50,6 +50,7 @@ public class ElementStation : MonoBehaviour, IStation
         Debug.Log("Storing...");
         if (storedBuilding is not null) Destroy(storedBuilding);
         storedBuilding = Instantiate(replacement, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.identity, this.transform);
+        storedBuilding.name = replacement.name;
     }
 
     /// <summary>
@@ -67,6 +68,7 @@ public class ElementStation : MonoBehaviour, IStation
     /// <returns> The stored building </returns>
     public GameObject GetStoredBuilding() {
         GameObject copy = Instantiate(storedBuilding);
+        copy.name = storedBuilding.name;
         Destroy(storedBuilding);
         return copy;
     }
@@ -89,6 +91,7 @@ public class ElementStation : MonoBehaviour, IStation
                 break;
             }
             storedBuilding = Instantiate(towerPrefabs[i], new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.identity, this.transform);
+            storedBuilding.name = towerPrefabs[i].name;
         }
     }
 }

@@ -45,6 +45,7 @@ public class BaseStation : MonoBehaviour, IStation
     /// </summary>
     public void StoreBuilding(GameObject replacement) {
         storedBuilding = Instantiate(replacement, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.identity, this.transform);
+        storedBuilding.name = replacement.name;
     }
 
     /// <summary>
@@ -53,11 +54,13 @@ public class BaseStation : MonoBehaviour, IStation
     /// <returns> The stored building </returns>
     public GameObject GetStoredBuilding() {
         GameObject copy = Instantiate(storedBuilding);
+        copy.name = storedBuilding.name;
         Destroy(storedBuilding);
         return copy;
     }
 
     public void Build() {
         storedBuilding = Instantiate(buildingPrefab, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.identity, this.transform);
+        storedBuilding.name = buildingPrefab.name;
     }
 }
