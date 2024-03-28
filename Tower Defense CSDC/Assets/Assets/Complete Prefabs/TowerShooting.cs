@@ -51,7 +51,7 @@ public class TowerShooting : MonoBehaviour
         foreach(GameObject proj in projectilePool.ToArray()) {
             int index = projectilePool.IndexOf(proj);
             moveToObject(objectsToTrack[index].obj, proj, projectileSpeed);
-            if (proj.GetComponent<ProjectileBehavior>().markForDestroy) { // for ice towers
+            if (proj.GetComponent<ProjectileBehavior>().markForDestroy) { // for ice tsowers
                 GameObject temp = proj;
                 projectilePool.Remove(proj);
                 Destroy(temp);

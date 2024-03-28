@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
@@ -11,13 +12,20 @@ public class WaveManager : MonoBehaviour
     public GameObject enemyPrefab;
     public List<int> wavesCurrency;
     public List<EnemyTypes.EnemyType> spawningEnemyList;
+    public NodesManager nodesManager;
+
+    // timer text
+    public TextMeshProUGUI timerTMP;
+    public float timeLeft;
 
 
     // Start is called before the first frame update
     void Start()
     {
         spawningEnemyList = new List<EnemyTypes.EnemyType>();
+        nodesManager = GameObject.Find("NodesManager").GetComponent<NodesManager>();
         StartCoroutine(WaveTimer());
+        timeLeft = waveFrequence;
 
 
     }
@@ -26,8 +34,18 @@ public class WaveManager : MonoBehaviour
     {
         while (waveCount < wavesCurrency.Count)
         {
+            timeLeft = waveFrequence;
+            Debug.Log("Time Left: " + timeLeft);
             
-            yield return new WaitForSeconds(waveFrequence);
+            //yield return new WaitForSeconds(waveFrequence);
+
+            while (timeLeft >= 0)
+            {
+                timerTMP.text = "Next Wave: " + Mathf.CeilToInt(timeLeft).ToString();
+                timeLeft -= Time.deltaTime;
+                yield return null;
+            }
+
             SetUpEnemyListByCurrency(waveCount);
             StartSpawningEnemies();
             waveCount++;
@@ -59,15 +77,19 @@ public class WaveManager : MonoBehaviour
             EnemyTypes.EnemyType enemyType = spawningEnemyList[nextRandom];
             spawningEnemyList.RemoveAt(nextRandom); // get random enemy and remove it from spawning list
 
+
+            int pathInt = nodesManager.GetRandomPathInt();
+            spawningPoint = nodesManager.GetSpawningPointFromPath(pathInt);
+
+            // Set Enemy Game Object
             GameObject enemy = Instantiate(enemyPrefab, spawningPoint); // spawn enemy object
-            
-            
-
-
             enemy.name = enemyType.ToString(); // set enemy object name
+
+            //Set Enemy Script
             EnemyController enemyController = enemy.GetComponent<EnemyController>();
             EnemyInfo newEnemyInfo = EnemyManager.Instance.GetEnemyInfo(enemyType);
             enemyController.SetEnemyInfo(newEnemyInfo);
+            enemyController.pathInt = pathInt;
             GameObject enemyModel = Instantiate(newEnemyInfo.model, enemy.transform);
             Rigidbody enemyRigidbody = enemy.GetComponent<Rigidbody>();
             enemyRigidbody.useGravity = newEnemyInfo.hasGravity;
@@ -118,7 +140,7 @@ public class WaveManager : MonoBehaviour
             }
             else {
                 enemyNum = UnityEngine.Random.Range(0, waveCurrency / enemyCost);
-                Debug.Log(enemyNum);
+                //Debug.Log(enemyNum);
                 
             }
             waveCurrency -= enemyNum * enemyCost;
@@ -138,4 +160,3 @@ public class WaveManager : MonoBehaviour
 }
 
 
-// To do next time: add enemy model

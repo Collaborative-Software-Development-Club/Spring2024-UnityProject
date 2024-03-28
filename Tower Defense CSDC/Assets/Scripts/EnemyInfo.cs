@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyInfo : MonoBehaviour
 {
     public EnemyTypes.EnemyType type;
-    public int health;
+    public float health;
     public int speed;
     public int cost;
     public int damage;
