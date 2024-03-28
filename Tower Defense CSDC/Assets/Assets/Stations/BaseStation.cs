@@ -12,7 +12,6 @@ public class BaseStation : MonoBehaviour, IStation
     public static event HandlePlayerEnter OnPlayerEnter;
     public delegate void HandlePlayerExit(object o, StationEventArgs sArgs);
     public static event HandlePlayerExit OnPlayerExit;
-    private bool openedInterface = false;
 
     private void Awake() {if (UIPanel is not null) UIPanel.SetActive(false);}
 
@@ -21,7 +20,6 @@ public class BaseStation : MonoBehaviour, IStation
     /// </summary>
     public void OpenInterface() {
         Debug.Log("Accessed base station!");
-        openedInterface = true;
         OnPlayerEnter?.Invoke(this, new StationEventArgs(StationEventArgs.StationType.Base));
     }
 
@@ -35,7 +33,6 @@ public class BaseStation : MonoBehaviour, IStation
     /// </summary>
     public void CloseInterface() {
         Debug.Log("Left base station!");
-        openedInterface = false;
         OnPlayerExit?.Invoke(this, new StationEventArgs(StationEventArgs.StationType.Base));
         UIPanel.SetActive(false);
     }

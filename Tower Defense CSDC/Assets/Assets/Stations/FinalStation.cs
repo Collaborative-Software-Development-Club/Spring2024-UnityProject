@@ -20,7 +20,6 @@ public class FinalStation : MonoBehaviour, IStation
     public static event HandlePlayerExit OnPlayerExit;
     public delegate void HandleBuildable(object o);
     public static event HandleBuildable OnBuiltObject;
-    private bool openedInterface = false;
     private List<EasyGridBuilderPro> buildList;
 
     private void Awake() {
@@ -33,7 +32,6 @@ public class FinalStation : MonoBehaviour, IStation
     /// </summary>
     public void OpenInterface() {
         Debug.Log("Accessed final station!");
-        openedInterface = true;
         OnPlayerEnter?.Invoke(this, new StationEventArgs(StationEventArgs.StationType.Final));
     }
 
@@ -47,7 +45,6 @@ public class FinalStation : MonoBehaviour, IStation
     /// </summary>
     public void CloseInterface() {
         Debug.Log("Left final station!");
-        openedInterface = false;
         OnPlayerExit?.Invoke(this, new StationEventArgs(StationEventArgs.StationType.Final));
         UIPanel.SetActive(false);
     }
