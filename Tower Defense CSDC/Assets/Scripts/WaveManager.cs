@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class WaveManager : MonoBehaviour
     public List<EnemyTypes.EnemyType> spawningEnemyList;
     public NodesManager nodesManager;
 
+    // timer text
+    public TextMeshProUGUI timerTMP;
+    public float timeLeft;
+
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +25,7 @@ public class WaveManager : MonoBehaviour
         spawningEnemyList = new List<EnemyTypes.EnemyType>();
         nodesManager = GameObject.Find("NodesManager").GetComponent<NodesManager>();
         StartCoroutine(WaveTimer());
+        timeLeft = waveFrequence;
 
 
     }
@@ -28,8 +34,18 @@ public class WaveManager : MonoBehaviour
     {
         while (waveCount < wavesCurrency.Count)
         {
+            timeLeft = waveFrequence;
+            Debug.Log("Time Left: " + timeLeft);
             
-            yield return new WaitForSeconds(waveFrequence);
+            //yield return new WaitForSeconds(waveFrequence);
+
+            while (timeLeft >= 0)
+            {
+                timerTMP.text = "Next Wave: " + Mathf.CeilToInt(timeLeft).ToString();
+                timeLeft -= Time.deltaTime;
+                yield return null;
+            }
+
             SetUpEnemyListByCurrency(waveCount);
             StartSpawningEnemies();
             waveCount++;
@@ -144,4 +160,3 @@ public class WaveManager : MonoBehaviour
 }
 
 
-// To do next time: add enemy model

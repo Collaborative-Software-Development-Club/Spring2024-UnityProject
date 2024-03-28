@@ -11,7 +11,7 @@ public class NodesManager : MonoBehaviour
     public List<Transform> GetNodesInPath(int pathInt)
     {
         List<Transform> nodes = new List<Transform>();
-        Debug.Log(pathInt);
+        //Debug.Log(pathInt);
         Transform path = pathList[pathInt];
 
         foreach (Transform node in path)
