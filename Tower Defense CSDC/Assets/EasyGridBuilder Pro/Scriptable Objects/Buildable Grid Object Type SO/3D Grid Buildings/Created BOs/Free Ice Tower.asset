@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14da98174320bd479aef7615e3f5d3f, type: 3}
+  m_Name: Free Ice Tower
+  m_EditorClassIdentifier: 
+  objectName: Ice Tower
+  buildableCategorySO: {fileID: 11400000, guid: 00d47d8fda444fb4f9e6779dcd31f855, type: 2}
+  objectDescription: A tower that shoots spears of ice at the enemy.
+  objectToolTipDescription: A tower that shoots spears of ice at the enemy.
+  objectIcon: {fileID: 21300000, guid: e3b6c4226da960a4e9dcd21aae5b0723, type: 3}
+  objectPrefab:
+  - {fileID: 0}
+  ghostPrefab: {fileID: 2601375562791849270, guid: 297a51c485fe7ea49b8bee75ef758f86, type: 3}
+  placeableGhostMaterial: {fileID: 2100000, guid: 281380b3d50e1eb46b869b8c8aa1307c, type: 2}
+  notPlaceableGhostMaterial: {fileID: 2100000, guid: 1fb75a46b45af6e49a32883c3bcb026a, type: 2}
+  setBuiltObjectLayer: 0
+  builtObjectLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  holdToPlace: 1
+  placeAndDeselect: 0
+  snapToObjectSnappers: 0
+  enableBuildCondition: 0
+  buildConditionSO: {fileID: 0}

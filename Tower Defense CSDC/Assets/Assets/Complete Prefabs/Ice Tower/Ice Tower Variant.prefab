@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8620651546523558948}
   - component: {fileID: 8156289976728961686}
   - component: {fileID: 4165662320864292181}
+  - component: {fileID: 5970895857715839630}
   m_Layer: 0
   m_Name: Ice Tower Variant
   m_TagString: Untagged
@@ -45,7 +46,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6143855440400968401}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 406ed6c1845107a4c8f383446e80927f, type: 3}
   m_Name: 
@@ -170,6 +171,25 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8670151273213183110, guid: 7c795e100f4cb3241a85fb4c7d834790, type: 3}
+--- !u!114 &5970895857715839630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143855440400968401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8bc7f894a18a041b25c7f4b0564369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildableFreeObjectTypeSO: {fileID: 11400000, guid: 8ca8ad1ca888b3640bc0c8170ba11a96, type: 2}
+  rotateObjectForXY: 1
+  rotateObjectForXZ: 0
+  rotateForXY: 0
+  objectScale: {x: 8.566523, y: 4, z: 9.723804}
+  objectCenter: {x: 0.3774529, y: 4.781545, z: 0.04635191}
+  objectCustomPivot: {x: 0.3774529, y: -0.1650238, z: 0.04635191}
 --- !u!1 &6713807644342978685
 GameObject:
   m_ObjectHideFlags: 0
