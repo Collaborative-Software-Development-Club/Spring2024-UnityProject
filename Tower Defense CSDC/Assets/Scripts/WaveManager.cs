@@ -15,7 +15,7 @@ public class WaveManager : MonoBehaviour
     public NodesManager nodesManager;
 
     // timer text
-    public TextMeshProUGUI timerTMP;
+    //public TextMeshProUGUI timerTMP;
     public float timeLeft;
 
 
@@ -41,7 +41,7 @@ public class WaveManager : MonoBehaviour
 
             while (timeLeft >= 0)
             {
-                timerTMP.text = "Next Wave: " + Mathf.CeilToInt(timeLeft).ToString();
+                //timerTMP.text = "Next Wave: " + Mathf.CeilToInt(timeLeft).ToString();
                 timeLeft -= Time.deltaTime;
                 yield return null;
             }
