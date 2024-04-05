@@ -21,9 +21,9 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         // Activate the game over UI canvas
-        gameOverCanvas.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        //gameOverCanvas.SetActive(true);
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
     }
 }
 

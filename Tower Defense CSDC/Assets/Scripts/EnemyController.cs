@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour
         transform.localScale = new Vector3(enemyInfo.scale, enemyInfo.scale, enemyInfo.scale);
         nodeList = nodesManager.GetNodesInPath(pathInt);
         target = nodeList[0].transform;
+
     }
     private void Update()
     {
@@ -37,16 +38,31 @@ public class EnemyController : MonoBehaviour
 
             Vector3 dir = target.position - transform.position;
             dir.y = 0;
+
+            // rotate when walking
+            if (dir != Vector3.zero)
+            {
+                Quaternion lookRotation = Quaternion.LookRotation(dir.normalized);
+                lookRotation *= Quaternion.Euler(0, 90, 0);
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10); //10 is turn speed
+            }
+
+
+
             transform.Translate(dir.normalized * enemyInfo.speed * Time.deltaTime, Space.World);
 
             // change target
             if (Vector3.Distance(transform.position, target.position) <= 10f && nodesNum < nodeList.Count)
             {
-                nodesNum++;
+                if (nodesNum < nodeList.Count - 1)
+                {
+                    nodesNum++;
+                }
                 if (nodesNum < nodeList.Count)
                 {
                     target = nodeList[nodesNum].transform;
                 }
+
             }
         }
 

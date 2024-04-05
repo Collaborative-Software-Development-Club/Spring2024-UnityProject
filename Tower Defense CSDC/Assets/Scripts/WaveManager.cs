@@ -82,8 +82,11 @@ public class WaveManager : MonoBehaviour
             spawningPoint = nodesManager.GetSpawningPointFromPath(pathInt);
 
             // Set Enemy Game Object
-            GameObject enemy = Instantiate(enemyPrefab, spawningPoint); // spawn enemy object
+            GameObject enemy = Instantiate(enemyPrefab, spawningPoint.position, Quaternion.identity); // spawn enemy object
             enemy.name = enemyType.ToString(); // set enemy object name
+
+            Debug.Log("Spawning at: " + spawningPoint.position);
+            Debug.Log("Enemy spawned at: " + enemy.transform.position);
 
             //Set Enemy Script
             EnemyController enemyController = enemy.GetComponent<EnemyController>();
