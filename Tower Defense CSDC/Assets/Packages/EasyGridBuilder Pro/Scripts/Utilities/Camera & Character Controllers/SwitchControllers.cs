@@ -20,7 +20,7 @@ namespace SoulGames.Utilities
 
         private Transform mainCam;
         private bool toggled = false;
-        private SimpleFirstPersonCameraController cameraController;
+        private Camera cameraController;
 
         private void Start()
         {
