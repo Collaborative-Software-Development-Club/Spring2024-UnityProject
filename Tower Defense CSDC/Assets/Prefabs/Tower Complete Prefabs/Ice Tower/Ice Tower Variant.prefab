@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2601375562791849270}
+  - component: {fileID: 6022708162189591539}
   - component: {fileID: 7260962752864113804}
   - component: {fileID: 2321305570954160275}
   - component: {fileID: 8620651546523558948}
@@ -39,7 +40,7 @@ Transform:
   - {fileID: 8158412973503253766}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7260962752864113804
+--- !u!114 &6022708162189591539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47,6 +48,25 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6143855440400968401}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8bc7f894a18a041b25c7f4b0564369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildableFreeObjectTypeSO: {fileID: 11400000, guid: d51cea5ee9e0f10468780d7d12432987, type: 2}
+  rotateObjectForXY: 1
+  rotateObjectForXZ: 0
+  rotateForXY: 0
+  objectScale: {x: 8.566523, y: 4, z: 9.723804}
+  objectCenter: {x: 0.3774529, y: 4.781545, z: 0.04635191}
+  objectCustomPivot: {x: 0.3774529, y: -0.1650238, z: 0.04635191}
+--- !u!114 &7260962752864113804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6143855440400968401}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 406ed6c1845107a4c8f383446e80927f, type: 3}
   m_Name: 
