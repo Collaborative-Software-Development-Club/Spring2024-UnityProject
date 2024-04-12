@@ -88,7 +88,7 @@ public class MineableResource : MonoBehaviour
     }
 
     // Get a reference to the ResourceDisplay script and update the text
-    private void UpdateResourceDisplay()
+    public void UpdateResourceDisplay()
     {
         if (resourceDisplay == null)
         {

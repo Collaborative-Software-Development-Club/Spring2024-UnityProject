@@ -9,12 +9,17 @@ public class ElementStation : MonoBehaviour, IStation
     [SerializeField] private GameObject UIPanel;
     [SerializeField] private TMP_Text elementText;
     [SerializeField] private GameObject[] towerPrefabs;
+    [SerializeField] private ResourceDisplay resourceDisplay;
+
     public GameObject storedBuilding {get; set;}
     public delegate void HandlePlayerEnter(object o, StationEventArgs sArgs);
     public static event HandlePlayerEnter OnPlayerEnter;
     public delegate void HandlePlayerExit(object o, StationEventArgs sArgs);
     public static event HandlePlayerExit OnPlayerExit;
     private string element;
+    public int woodCost = 5;
+
+    public int metalCost = 5;
 
     private void Awake() {if (UIPanel is not null) UIPanel.SetActive(false);}
 
@@ -70,6 +75,7 @@ public class ElementStation : MonoBehaviour, IStation
         return copy;
     }
     public void Build() {
+        if (MineableResource.metalResource >= metalCost && MineableResource.woodResource >= woodCost) {
         if (storedBuilding is not null) {
             Destroy(storedBuilding);
             int i = -1;
@@ -89,6 +95,11 @@ public class ElementStation : MonoBehaviour, IStation
             }
             storedBuilding = Instantiate(towerPrefabs[i], new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.identity, this.transform);
             storedBuilding.name = towerPrefabs[i].name;
+            MineableResource.metalResource = metalCost;
+            MineableResource.woodResource = woodCost;
+            resourceDisplay.UpdateResourceText();
+
+        }
         }
     }
 }

@@ -13,6 +13,8 @@ public class FinalStation : MonoBehaviour, IStation
         public BuildableGridObjectTypeSO gridObject;
     }
     [SerializeField] private List<Storable> storables;
+    [SerializeField] private ResourceDisplay resourceDisplay;
+
     public GameObject storedBuilding {get; set;}
     public delegate void HandlePlayerEnter(object o, StationEventArgs sArgs);
     public static event HandlePlayerEnter OnPlayerEnter;
@@ -21,6 +23,8 @@ public class FinalStation : MonoBehaviour, IStation
     public delegate void HandleBuildable(object o);
     public static event HandleBuildable OnBuiltObject;
     private List<EasyGridBuilderPro> buildList;
+    public int woodCost = 5;
+    public int metalCost = 5;
 
     private void Awake() {
         if (UIPanel is not null) UIPanel.SetActive(false);
@@ -72,6 +76,7 @@ public class FinalStation : MonoBehaviour, IStation
     /// Builds a building on the grid
     /// </summary>
     public void Build() {
+        if (MineableResource.metalResource >= metalCost && MineableResource.woodResource >= woodCost) {
         if (storedBuilding != null) {
             Time.timeScale = 1.0f;
             UnityEngine.Cursor.lockState = CursorLockMode.Locked;   
@@ -103,6 +108,10 @@ public class FinalStation : MonoBehaviour, IStation
                 }
                 if (!typeToUse.Equals("")) Destroy(storedBuilding);
             }
+        }
+        MineableResource.metalResource -= metalCost;
+        MineableResource.woodResource -= woodCost;
+        resourceDisplay.UpdateResourceText();
         }
     }
 }

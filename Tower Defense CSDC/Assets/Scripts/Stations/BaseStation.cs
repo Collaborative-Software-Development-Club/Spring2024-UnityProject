@@ -7,11 +7,18 @@ public class BaseStation : MonoBehaviour, IStation
 {
     [SerializeField] private GameObject UIPanel;
     [SerializeField] private GameObject buildingPrefab;
+    [SerializeField] private ResourceDisplay resourceDisplay;
     public GameObject storedBuilding {get; set;}
     public delegate void HandlePlayerEnter(object o, StationEventArgs sArgs);
     public static event HandlePlayerEnter OnPlayerEnter;
     public delegate void HandlePlayerExit(object o, StationEventArgs sArgs);
     public static event HandlePlayerExit OnPlayerExit;
+
+    public int woodCost = 5;
+
+    public int metalCost = 5;
+
+
 
     private void Awake() {if (UIPanel is not null) UIPanel.SetActive(false);}
 
@@ -57,7 +64,13 @@ public class BaseStation : MonoBehaviour, IStation
     }
 
     public void Build() {
+    if (MineableResource.metalResource >= metalCost && MineableResource.woodResource >= woodCost) {
         storedBuilding = Instantiate(buildingPrefab, new Vector3(this.transform.position.x, this.transform.position.y + 2, this.transform.position.z), Quaternion.identity, this.transform);
         storedBuilding.name = buildingPrefab.name;
+        MineableResource.metalResource -= metalCost;
+        MineableResource.woodResource -= woodCost;
+        resourceDisplay.UpdateResourceText();
     }
+}
+
 }
