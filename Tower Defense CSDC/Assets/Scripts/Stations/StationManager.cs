@@ -68,12 +68,16 @@ public class StationManager : MonoBehaviour
         Time.timeScale = 1.0f;
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;   
         UnityEngine.Cursor.visible = false;
-        if (activeStation != null) activeStation.CloseInterface();
+        if (activeStation != null) activeStation.CloseGUI();
+        interactPrompt.enabled = true;
     }
 
     private void CloseInterface(object o, StationEventArgs sArgs) {
         interactPrompt.enabled = false;
         activeStation = null;
+    }
+    private void ClosePrompt() {
+
     }
 
     private void Update() {

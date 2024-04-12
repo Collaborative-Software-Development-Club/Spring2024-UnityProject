@@ -27,6 +27,10 @@ public class BaseStation : MonoBehaviour, IStation
         Debug.Log("Opened GUI");
         UIPanel.SetActive(true);
     }
+    public void CloseGUI() {
+        Debug.Log("Closed GUI");
+        UIPanel.SetActive(false);
+    }
 
     /// <summary>
     /// Closes the interface for the base station.

@@ -40,6 +40,11 @@ public class FinalStation : MonoBehaviour, IStation
         UIPanel.SetActive(true);
     }
 
+    public void CloseGUI() {
+        Debug.Log("Closed GUI");
+        UIPanel.SetActive(false);
+    }
+
     /// <summary>
     /// Closes the interface for the final station.
     /// </summary>
