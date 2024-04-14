@@ -14,11 +14,11 @@ public class ResourceDisplay : MonoBehaviour
 
         if (metalText == null || woodText == null)
         {
-            Debug.LogError("TextMeshPro components not found!");
+            //Debug.LogError("TextMeshPro components not found!");
         }
         else
         {
-            Debug.Log("TextMeshPro components found.");
+            //Debug.Log("TextMeshPro components found.");
         }
 
         // Example of updating the TextMeshPro components with integer values

@@ -59,7 +59,7 @@ public class CentralPoint : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0f)
             {
-                Debug.Log("Update: Dealing Damage...");
+                //Debug.Log("Update: Dealing Damage...");
                 ApplyDamage();
                 timer = damageInterval;
             }
@@ -72,7 +72,7 @@ public class CentralPoint : MonoBehaviour
         foreach (EnemyInfo enemyInfo in enemyPool)
         {
             int damageAmount = enemyInfo.damage;
-            Debug.Log("ApplyDamage: Dealing Damage...");
+            //Debug.Log("ApplyDamage: Dealing Damage...");
             TakeDamage(damageAmount);
         }
     }
@@ -80,7 +80,7 @@ public class CentralPoint : MonoBehaviour
     void TakeDamage(int damage)
     {
         // Reduce the central point's health
-        Debug.Log("TakeDamage: Dealing Damage...");
+        //Debug.Log("TakeDamage: Dealing Damage...");
         currentHealth -= damage;
 
         // Check if the central point's health has reached zero

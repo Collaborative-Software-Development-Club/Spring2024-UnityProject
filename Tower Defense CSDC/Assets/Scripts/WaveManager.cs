@@ -35,13 +35,13 @@ public class WaveManager : MonoBehaviour
         while (waveCount < wavesCurrency.Count)
         {
             timeLeft = waveFrequence;
-            Debug.Log("Time Left: " + timeLeft);
+            //Debug.Log("Time Left: " + timeLeft);
             
             //yield return new WaitForSeconds(waveFrequence);
 
             while (timeLeft >= 0)
             {
-                timerTMP.text = "Next Wave: " + Mathf.CeilToInt(timeLeft).ToString();
+                //timerTMP.text = "Next Wave: " + Mathf.CeilToInt(timeLeft).ToString();
                 timeLeft -= Time.deltaTime;
                 yield return null;
             }
@@ -84,9 +84,6 @@ public class WaveManager : MonoBehaviour
             // Set Enemy Game Object
             GameObject enemy = Instantiate(enemyPrefab, spawningPoint.position, Quaternion.identity); // spawn enemy object
             enemy.name = enemyType.ToString(); // set enemy object name
-
-            Debug.Log("Spawning at: " + spawningPoint.position);
-            Debug.Log("Enemy spawned at: " + enemy.transform.position);
 
             //Set Enemy Script
             EnemyController enemyController = enemy.GetComponent<EnemyController>();
