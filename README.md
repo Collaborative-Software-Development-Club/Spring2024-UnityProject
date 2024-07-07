@@ -2,7 +2,7 @@
 
 ## Downloading and Installing GitHub Desktop
 
-1. **Verify System Requirements**: Ensure you have a x64 operating system. If not, talk to the VP ASAP.
+1. **Verify System Requirements**: Ensure you have a x64 operating system. If not, talk to the president ASAP.
 2. **Download GitHub Desktop**:
     - Go to [GitHub Desktop](https://desktop.github.com/).
     - Click "Download for Windows (64bit)". If you are on a Mac, click "Download for macOS" under "macOS?".
