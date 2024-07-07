@@ -1,54 +1,62 @@
-###################################################################################################
+# Installation Guide
 
--- DOWNLOADING AND INSTALLING GITHUB DESKTOP --
-1. Ensure you have a x64 operating system (you probably do). If not, talk to the VP asap.
-2. Head to this link: https://desktop.github.com/
-3. Click "Download for Windows (64bit)". If you are on a Mac computer, instead click
-"Download for macOS" under "macOS?".
-4. Click the download link once it finishes.
-5. Install the program as instructed by the installation screen.
-6. Open GitHub Desktop.
-7. Login to the application using your GitHub login information. If you do not have a GitHub login, head to https://github.com/ and create an
-account. I will invite you to the organization once you notify me that your account has
-been created.
+## Downloading and Installing GitHub Desktop
 
-Congratulations! You should have GitHub Desktop installed on your device! If you need
-assistance, contact the VP (beanshapiro on discord).
+1. **Verify System Requirements**: Ensure you have a x64 operating system. If not, talk to the VP ASAP.
+2. **Download GitHub Desktop**:
+    - Go to [GitHub Desktop](https://desktop.github.com/).
+    - Click "Download for Windows (64bit)". If you are on a Mac, click "Download for macOS" under "macOS?".
+3. **Install GitHub Desktop**:
+    - Once the download finishes, open the downloaded file.
+    - Follow the installation instructions on the screen.
+4. **Open GitHub Desktop**.
+5. **Login to GitHub**:
+    - Use your GitHub login information. 
+    - If you do not have a GitHub account, create one at [GitHub](https://github.com/).
+    - Notify the VP once your account is created to receive an invite to the organization.
 
--- DOWNLOADING AND INSTALLING UNITY --
-1. Ensure that you have a Windows 7, 10, or 11 operating system with x64 architecture
-(you probably do), or have a Mac device running the latest version(s) of macOS.
-2. Go to https://unity.com/.
-3. Click on the blue tab that says "Plans and Pricing ->".
-4. Click the blue tab that says "Student and hobbyist"
-5. Select the blue icon that says "Get started" under the "Personal" header.
-6. Download the Unity Hub application for your device.
-7. Click the download link once it finishes.
-8. Go through the Installer prompt checks. Choose the default components only. This may or may not occur, but if you are prompted for a version of Unity Editor, 
-choose version 2022.3.8f1.
-9. Open the newly installed Unity Hub.
-10. You will likely be prompted to create a Unity account. Do so, by creating a Unity ID. Choose
-"Personal" when you get to licensing.
-11. Login to Unity Hub.
-12. You will be prompted to install Unity Editor. Again, choose version 2022.3.8f1. Agree to
-the license agreement.
+Congratulations! GitHub Desktop should now be installed on your device! If you need assistance, contact the president (beanshapiro on Discord).
 
-Congratulations! You should have Unity installed on your device! If you need
-assistance, contact the VP (beanshapiro on discord).
+## Downloading and Installing Unity
 
--- ACCESSING THE PROJECT ON YOUR DEVICE -- 
-1. Go to GitHub Desktop on your device.
-2. Click File in the top left corner.
-3. From there, click "Clone repository"
-4. Locate the repository for this project from the list. It should be called "Spring2024-UnityProject".
-5. Hit "Clone". Wait for the project to finish cloning.
-6. Now head to the Unity Hub application on your device.
-7. From the "Projects" tab, locate "Open" and click it.
-8. Locate the GitHub folder on your device. For a Windows device, this is usually under User/[YOUR-USERNAME]/Documents. Click it to enter the folder, but DO NOT CLICK OPEN.
-9. You should see several items in this folder. One of them should be called "Tower Defense CSDC". Open this folder by hitting the button in the bottom right.
-10. Unity should now allow you to open the project
+1. **Verify System Requirements**:
+    - For Windows: Ensure you have Windows 7, 10, or 11 with x64 architecture.
+    - For Mac: Ensure you are running the latest version of macOS.
+2. **Download Unity Hub**:
+    - Go to [Unity](https://unity.com/).
+    - Click on "Plans and Pricing ->".
+    - Click "Student and hobbyist".
+    - Under the "Personal" header, click "Get started".
+    - Download the Unity Hub application for your device.
+3. **Install Unity Hub**:
+    - Once the download finishes, open the downloaded file.
+    - Follow the installer prompts. Choose the default components.
+    - If prompted for a version of Unity Editor, choose version 2022.3.8f1.
+4. **Open Unity Hub**.
+5. **Create a Unity Account**:
+    - You will likely be prompted to create a Unity ID.
+    - Choose "Personal" for licensing.
+6. **Login to Unity Hub**.
+7. **Install Unity Editor**:
+    - When prompted, choose version 2022.3.8f1.
+    - Agree to the license agreement.
 
-Congratulations! You can now access the project on your device! If you need
-assistance, contact the VP (beanshapiro on discord).
+Congratulations! Unity should now be installed on your device! If you need assistance, contact the president (beanshapiro on Discord).
 
-###################################################################################################
+## Accessing the Project on Your Device
+
+1. **Open GitHub Desktop**.
+2. **Clone the Repository**:
+    - Click "File" in the top left corner.
+    - Select "Clone repository".
+    - Locate the repository named "Spring2024-UnityProject".
+    - Click "Clone" and wait for the project to finish cloning.
+3. **Open the Project in Unity Hub**:
+    - Open Unity Hub.
+    - Go to the "Projects" tab and click "Open".
+    - Locate the GitHub folder on your device (usually under User/[YOUR-USERNAME]/Documents on Windows).
+    - Open the folder named "Tower Defense CSDC".
+
+Congratulations! You can now access the project on your device! If you need assistance, contact the president (beanshapiro on Discord).
+
+---
